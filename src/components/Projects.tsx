@@ -86,6 +86,9 @@ const Projects: React.FC = () => {
     scrollToIndex(nextIndex)
   }
 
+  // NOTE: Maine is function ko comment kar diya hai kyunki ye niche use nahi ho raha tha
+  // aur build error de raha tha. Agar future mein chahiye ho to uncomment kar lena.
+  /*
   const startAutoplay = () => {
     if (!totalProjects) return
     if (autoplayRef.current) {
@@ -95,6 +98,7 @@ const Projects: React.FC = () => {
       scrollCarousel('next')
     }, 6000)
   }
+  */
 
   const stopAutoplay = () => {
     if (autoplayRef.current) {
