@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react'
-import { motion, useMotionValue } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FiGithub, FiExternalLink, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import './Projects.css'
 
