@@ -1,0 +1,1 @@
+This is a placeholder file. Please add the char.glb file in this directory.
