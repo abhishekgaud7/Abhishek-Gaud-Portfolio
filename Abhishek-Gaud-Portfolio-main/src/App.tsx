@@ -5,6 +5,7 @@ import Landing from './components/Landing'
 import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import ProjectsSection from './sections/ProjectsSection'
 import Contact from './components/Contact'
 import Experience from './components/Experience'
 import Achievements from './components/Achievements'
@@ -26,6 +27,7 @@ function App() {
       <Education />
       <Certificate />
       <Skills />
+      <ProjectsSection />
       <Projects />
       <Achievements />
       <Contact />
