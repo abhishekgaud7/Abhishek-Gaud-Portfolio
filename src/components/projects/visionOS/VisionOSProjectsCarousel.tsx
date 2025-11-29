@@ -3,7 +3,7 @@ import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-mo
 import { visionProjects } from '../../../data/projects'
 
 const SPRING_CONFIG = {
-  type: 'spring',
+  type: 'spring' as const,
   stiffness: 150,
   damping: 20,
 }

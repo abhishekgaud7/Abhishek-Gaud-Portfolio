@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
+import { motion, useMotionValue } from 'framer-motion'
 import { FiGithub, FiExternalLink, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import './Projects.css'
 
@@ -15,7 +15,6 @@ const Projects: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null)
-  const dragX = useMotionValue(0)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   const projectsData: Project[] = [
