@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { FiGithub, FiExternalLink, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
+import { FiGithub, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import './Projects.css'
 
 interface Project {
@@ -23,6 +23,27 @@ const Projects: React.FC = () => {
       description: 'Your Personal AI Health Companion - An AI-powered health application that provides personalized health recommendations and insights.',
       tech: ['React', 'Node.js', 'AI/ML', 'MongoDB'],
       link: 'https://mediguardia.vercel.app/',
+      github: 'https://github.com/abhishekgaud7'
+    },
+    {
+      title: 'Personalized News Aggregator',
+      description: 'A web application that filters and recommends news articles based on user preferences using ML recommendation systems.',
+      tech: ['Python', 'Flask', 'TensorFlow', 'News API', 'React'],
+      link: '#',
+      github: 'https://github.com/abhishekgaud7'
+    },
+    {
+      title: 'Secure Password Manager',
+      description: 'An encrypted password vault with AES-256 encryption, secure storage, and master password protection.',
+      tech: ['Python', 'Encryption', 'SQLite', 'Security'],
+      link: '#',
+      github: 'https://github.com/abhishekgaud7'
+    },
+    {
+      title: 'Habit Tracker with Data Visualization',
+      description: 'Full-stack habit tracking application with interactive charts and progress visualization.',
+      tech: ['React', 'Node.js', 'Chart.js', 'MongoDB'],
+      link: '#',
       github: 'https://github.com/abhishekgaud7'
     },
     {
@@ -246,9 +267,6 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
                   <div className="project-links">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <FiExternalLink /> Live
-                    </a>
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link ghost">
                       <FiGithub /> Code
                     </a>
