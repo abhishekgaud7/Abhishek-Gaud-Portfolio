@@ -246,7 +246,9 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
                   <div className="project-links">
-
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                      <FiExternalLink /> Live
+                    </a>
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link ghost">
                       <FiGithub /> Code
                     </a>
