@@ -88,13 +88,13 @@ const Projects: React.FC = () => {
   const getCardStyle = (index: number) => {
     const offset = index - activeIndex
     const absOffset = Math.abs(offset)
-    
+
     // Normalize offset for circular carousel
     let normalizedOffset = offset
     if (absOffset > totalProjects / 2) {
       normalizedOffset = offset > 0 ? offset - totalProjects : offset + totalProjects
     }
-    
+
     if (normalizedOffset === 0) {
       return {
         scale: 1,
@@ -108,7 +108,7 @@ const Projects: React.FC = () => {
         boxShadow: '0 25px 80px rgba(0, 0, 0, 0.5), 0 0 50px rgba(99, 102, 241, 0.3)',
       }
     }
-    
+
     if (Math.abs(normalizedOffset) === 1) {
       return {
         scale: 0.88,
@@ -122,7 +122,7 @@ const Projects: React.FC = () => {
         boxShadow: '0 15px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(99, 102, 241, 0.2)',
       }
     }
-    
+
     if (Math.abs(normalizedOffset) === 2) {
       return {
         scale: 0.75,
@@ -136,7 +136,7 @@ const Projects: React.FC = () => {
         boxShadow: '0 10px 35px rgba(0, 0, 0, 0.35), 0 0 20px rgba(99, 102, 241, 0.15)',
       }
     }
-    
+
     return {
       scale: 0.65,
       rotateY: normalizedOffset > 0 ? -45 : 45,
@@ -205,79 +205,75 @@ const Projects: React.FC = () => {
           {projectsData.map((project, index) => {
             const cardStyle = getCardStyle(index)
             const isActive = index === activeIndex
-            
+
             return (
-            <motion.article
-              key={index}
-              className="project-card-3d"
-              initial={false}
-              animate={{
-                scale: cardStyle.scale,
-                rotateY: isActive ? cardStyle.rotateY + mousePosition.y : cardStyle.rotateY,
-                rotateX: isActive ? mousePosition.x : 0,
-                x: cardStyle.translateX,
-                y: cardStyle.translateY,
-                z: cardStyle.translateZ,
-                opacity: cardStyle.opacity,
-                filter: cardStyle.filter,
-              }}
-              transition={{
-                type: 'spring',
-                stiffness: 300,
-                damping: 30,
-                mass: 0.8,
-              }}
-              style={{
-                zIndex: cardStyle.zIndex,
-                transformStyle: 'preserve-3d',
-                boxShadow: cardStyle.boxShadow,
-                transformOrigin: 'center center',
-                left: '50%',
-                top: '50%',
-                marginLeft: `calc(min(-210px, -42.5vw) + ${cardStyle.translateX}px)`,
-                marginTop: `calc(-200px + ${cardStyle.translateY}px)`,
-              }}
-              onMouseMove={(event) => {
-                if (!isActive) return
-                const rect = event.currentTarget.getBoundingClientRect()
-                const x = event.clientX - rect.left
-                const y = event.clientY - rect.top
-                const centerX = rect.width / 2
-                const centerY = rect.height / 2
-                const rotateX = ((y - centerY) / centerY) * -8
-                const rotateY = ((x - centerX) / centerX) * 8
-                setMousePosition({ x: rotateX, y: rotateY })
-              }}
-              onMouseLeave={() => {
-                if (isActive) setMousePosition({ x: 0, y: 0 })
-              }}
-              onClick={() => {
-                scrollToIndex(index)
-              }}
-            >
-              <div className="project-glow" aria-hidden="true"></div>
-              <div className="project-card__content">
-                <header className="project-header">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                </header>
-                <div className="project-tech">
-                  {project.tech.map((tech, idx) => (
-                    <span key={idx} className="tech-tag">{tech}</span>
-                  ))}
-                </div>
-                <div className="project-links">
-                  {project.link !== '#' && (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <FiExternalLink /> Live
+              <motion.article
+                key={index}
+                className="project-card-3d"
+                initial={false}
+                animate={{
+                  scale: cardStyle.scale,
+                  rotateY: isActive ? cardStyle.rotateY + mousePosition.y : cardStyle.rotateY,
+                  rotateX: isActive ? mousePosition.x : 0,
+                  x: cardStyle.translateX,
+                  y: cardStyle.translateY,
+                  z: cardStyle.translateZ,
+                  opacity: cardStyle.opacity,
+                  filter: cardStyle.filter,
+                }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 30,
+                  mass: 0.8,
+                }}
+                style={{
+                  zIndex: cardStyle.zIndex,
+                  transformStyle: 'preserve-3d',
+                  boxShadow: cardStyle.boxShadow,
+                  transformOrigin: 'center center',
+                  left: '50%',
+                  top: '50%',
+                  marginLeft: `calc(min(-210px, -42.5vw) + ${cardStyle.translateX}px)`,
+                  marginTop: `calc(-200px + ${cardStyle.translateY}px)`,
+                }}
+                onMouseMove={(event) => {
+                  if (!isActive) return
+                  const rect = event.currentTarget.getBoundingClientRect()
+                  const x = event.clientX - rect.left
+                  const y = event.clientY - rect.top
+                  const centerX = rect.width / 2
+                  const centerY = rect.height / 2
+                  const rotateX = ((y - centerY) / centerY) * -8
+                  const rotateY = ((x - centerX) / centerX) * 8
+                  setMousePosition({ x: rotateX, y: rotateY })
+                }}
+                onMouseLeave={() => {
+                  if (isActive) setMousePosition({ x: 0, y: 0 })
+                }}
+                onClick={() => {
+                  scrollToIndex(index)
+                }}
+              >
+                <div className="project-glow" aria-hidden="true"></div>
+                <div className="project-card__content">
+                  <header className="project-header">
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                  </header>
+                  <div className="project-tech">
+                    {project.tech.map((tech, idx) => (
+                      <span key={idx} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                  <div className="project-links">
+
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link ghost">
+                      <FiGithub /> Code
                     </a>
-                  )}
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link ghost">
-                    <FiGithub /> Code
-                  </a>
+                  </div>
                 </div>
-              </div>
-            </motion.article>
+              </motion.article>
             )
           })}
         </div>
