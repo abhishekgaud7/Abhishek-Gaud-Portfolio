@@ -35,7 +35,7 @@
 }
 
 .projects {
-  background: radial-gradient(circle at top, rgba(139, 92, 246, 0.08), transparent 55%);
+  background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15), transparent 55%);
 }
 
 
@@ -168,14 +168,14 @@
   top: 50%;
   border-radius: 24px;
   overflow: visible;
-  padding: 2px;
-  background: linear-gradient(135deg, rgba(167, 139, 250, 0.4), rgba(236, 72, 153, 0.3));
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(236, 72, 153, 0.7));
   cursor: pointer;
   transform-style: preserve-3d;
   will-change: transform;
   backface-visibility: hidden;
   transform-origin: center center;
-  box-shadow: 0 4px 6px rgba(139, 92, 246, 0.1);
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.3);
 }
 
 .project-card::after {
@@ -221,8 +221,8 @@
 .project-glow {
   position: absolute;
   inset: 20px;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(236, 72, 153, 0.15), transparent 65%);
-  filter: blur(20px);
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(236, 72, 153, 0.4), transparent 65%);
+  filter: blur(25px);
   z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -252,9 +252,9 @@
 .tech-tag {
   padding: 8px 14px;
   border-radius: 20px;
-  border: 1px solid rgba(167, 139, 250, 0.3);
+  border: 1px solid rgba(139, 92, 246, 0.6);
   color: #7c3aed;
-  background: rgba(167, 139, 250, 0.1);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.15));
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -289,7 +289,7 @@
 }
 
 .project-link.ghost:hover {
-  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.25);
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.4);
 }
 
 .projects-indicators {
