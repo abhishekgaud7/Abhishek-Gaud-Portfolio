@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --primary: #3b82f6;
-  --secondary: #64748b;
+  --primary: #8b5cf6;
+  --secondary: #ec4899;
   --dark: #1e293b;
   --light: #ffffff;
   --text: #1e293b;
   --text-light: #64748b;
-  --bg: #f8fafc;
-  --border: #e2e8f0;
+  --bg: #faf5ff;
+  --border: #e9d5ff;
 }
 
 * {
@@ -44,7 +44,10 @@ h2 {
   font-size: 2.8rem;
   margin-bottom: 50px;
   text-align: center;
-  color: var(--dark);
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 700;
 }
 
