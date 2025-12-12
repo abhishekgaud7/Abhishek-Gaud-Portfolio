@@ -35,7 +35,7 @@
 }
 
 .projects {
-  background: radial-gradient(circle at top, rgba(59, 130, 246, 0.1), transparent 55%);
+  background: transparent;
 }
 
 
@@ -168,13 +168,15 @@
   top: 50%;
   border-radius: 24px;
   overflow: visible;
-  padding: 1px;
-  background: rgba(59, 130, 246, 0.3);
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid var(--border);
   cursor: pointer;
   transform-style: preserve-3d;
   will-change: transform;
   backface-visibility: hidden;
   transform-origin: center center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .project-card::after {
@@ -208,8 +210,8 @@
 .project-card__content {
   position: relative;
   z-index: 2;
-  background: rgba(7, 11, 20, 0.9);
-  border-radius: 22px;
+  background: #ffffff;
+  border-radius: 24px;
   padding: 32px;
   min-height: 340px;
   display: flex;
@@ -218,27 +220,17 @@
 }
 
 .project-glow {
-  position: absolute;
-  inset: 20px;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.25), transparent 65%);
-  filter: blur(30px);
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.project-card:hover .project-glow {
-  opacity: 0.8;
+  display: none;
 }
 
 .project-header h3 {
   margin: 14px 0 12px;
   font-size: 1.5rem;
-  color: #fff;
+  color: var(--dark);
 }
 
 .project-header p {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-light);
   line-height: 1.7;
 }
 
@@ -251,9 +243,9 @@
 .tech-tag {
   padding: 8px 14px;
   border-radius: 20px;
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  color: #dbeafe;
-  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bg);
   font-size: 0.85rem;
   font-weight: 500;
 }
