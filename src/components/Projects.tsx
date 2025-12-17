@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { FiGithub, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import './Projects.css'
+// @ts-ignore
+import Shery from 'sheryjs'
 
 interface Project {
   title: string
@@ -9,6 +11,7 @@ interface Project {
   tech: string[]
   link: string
   github?: string
+  image: string
 }
 
 const Projects: React.FC = () => {
@@ -23,49 +26,56 @@ const Projects: React.FC = () => {
       description: 'Your Personal AI Health Companion - An AI-powered health application that provides personalized health recommendations and insights.',
       tech: ['React', 'Node.js', 'AI/ML', 'MongoDB'],
       link: 'https://mediguardia.vercel.app/',
-      github: 'https://github.com/abhishekgaud7'
+      github: 'https://github.com/abhishekgaud7',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Personalized News Aggregator',
       description: 'A web application that filters and recommends news articles based on user preferences using ML recommendation systems.',
       tech: ['Python', 'Flask', 'TensorFlow', 'News API', 'React'],
       link: '#',
-      github: 'https://github.com/abhishekgaud7'
+      github: 'https://github.com/abhishekgaud7',
+      image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Secure Password Manager',
       description: 'An encrypted password vault with AES-256 encryption, secure storage, and master password protection.',
       tech: ['Python', 'Encryption', 'SQLite', 'Security'],
       link: '#',
-      github: 'https://github.com/abhishekgaud7'
+      github: 'https://github.com/abhishekgaud7',
+      image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Habit Tracker with Data Visualization',
       description: 'Full-stack habit tracking application with interactive charts and progress visualization.',
       tech: ['React', 'Node.js', 'Chart.js', 'MongoDB'],
       link: '#',
-      github: 'https://github.com/abhishekgaud7'
+      github: 'https://github.com/abhishekgaud7',
+      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Employee Management System',
       description: 'Role-based platform to onboard employees, track reviews, and manage payroll approvals with automated email workflows.',
       tech: ['Spring Boot', 'Hibernate', 'REST', 'MySQL', 'React'],
       link: 'https://github.com/abhishekgaud7/employee-management-system',
-      github: 'https://github.com/abhishekgaud7/employee-management-system'
+      github: 'https://github.com/abhishekgaud7/employee-management-system',
+      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Online Examination System',
       description: 'Full-stack exam engine with JWT auth, timed assessments, and analytics dashboards for instructors and learners.',
       tech: ['Spring MVC', 'Hibernate', 'JWT', 'MySQL', 'TypeScript'],
       link: 'https://github.com/abhishekgaud7/online-examination-system',
-      github: 'https://github.com/abhishekgaud7/online-examination-system'
+      github: 'https://github.com/abhishekgaud7/online-examination-system',
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'OTP-based Email Verification',
       description: 'Microservice that issues signed OTP tokens, validates expiry, and secures onboarding flows with audit-grade logs.',
       tech: ['Spring Boot', 'JavaMailSender', 'MySQL', 'JWT', 'Postman'],
       link: 'https://github.com/abhishekgaud7/otp-email-verification',
-      github: 'https://github.com/abhishekgaud7/otp-email-verification'
+      github: 'https://github.com/abhishekgaud7/otp-email-verification',
+      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80'
     }
   ]
 
@@ -99,7 +109,7 @@ const Projects: React.FC = () => {
       return {
         scale: 1,
         rotateY: 0,
-        translateX: 150,
+        translateX: 0, // Centered
         translateY: 0,
         translateZ: 0,
         opacity: 1,
@@ -113,7 +123,7 @@ const Projects: React.FC = () => {
       return {
         scale: 0.88,
         rotateY: normalizedOffset > 0 ? -28 : 28,
-        translateX: 150 + (normalizedOffset * 120),
+        translateX: normalizedOffset * 150, // Reduced spread
         translateY: 0,
         translateZ: -120,
         opacity: 0.75,
@@ -127,7 +137,7 @@ const Projects: React.FC = () => {
       return {
         scale: 0.75,
         rotateY: normalizedOffset > 0 ? -38 : 38,
-        translateX: 150 + (normalizedOffset * 100),
+        translateX: normalizedOffset * 120,
         translateY: 0,
         translateZ: -220,
         opacity: 0.55,
@@ -140,7 +150,7 @@ const Projects: React.FC = () => {
     return {
       scale: 0.65,
       rotateY: normalizedOffset > 0 ? -45 : 45,
-      translateX: 150 + (normalizedOffset * 80),
+      translateX: normalizedOffset * 100,
       translateY: 0,
       translateZ: -320,
       opacity: 0.35,
@@ -149,20 +159,6 @@ const Projects: React.FC = () => {
       boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(99, 102, 241, 0.1)',
     }
   }
-
-  // NOTE: Maine is function ko comment kar diya hai kyunki ye niche use nahi ho raha tha
-  // aur build error de raha tha. Agar future mein chahiye ho to uncomment kar lena.
-  /*
-  const startAutoplay = () => {
-    if (!totalProjects) return
-    if (autoplayRef.current) {
-      clearInterval(autoplayRef.current)
-    }
-    autoplayRef.current = setInterval(() => {
-      scrollCarousel('next')
-    }, 6000)
-  }
-  */
 
   const stopAutoplay = () => {
     if (autoplayRef.current) {
@@ -185,12 +181,33 @@ const Projects: React.FC = () => {
   }, [scrollCarousel])
 
   useEffect(() => {
-    // startAutoplay() // Temporarily disabled autoplay
-    return () => {
-      stopAutoplay()
-    }
-  }, [activeIndex])
+    // Initializing Shery Effect
+    // Wrap in timeout to ensure DOM elements are rendered
+    const timer = setTimeout(() => {
+      try {
+        if (Shery) {
+          Shery.imageEffect(".project-img-container", {
+            style: 2, // Liquid distortion effect
+            //  debug: true, // debug panel to tune parameters
+            config: { "resolutionXY": { "value": 100 }, "distortion": { "value": true }, "mode": { "value": -3 }, "mousemove": { "value": 0 }, "modeA": { "value": 1 }, "modeN": { "value": 0 }, "speed": { "value": 1, "range": [-500, 500] }, "frequency": { "value": 50, "range": [-800, 800] }, "angle": { "value": 0.5, "range": [0, 3.141592653589793] }, "waveFactor": { "value": 1.4, "range": [-3, 3] }, "color": { "value": 10212607 }, "pixelStrength": { "value": 3, "range": [-20, 100, 0] }, "quality": { "value": 5, "range": [0, 40] }, "contrast": { "value": 1, "range": [-25, 25] }, "brightness": { "value": 1, "range": [-1, 25] }, "colorExuberance": { "value": 0.25, "range": [0, 2.5] }, "longevity": { "value": 1, "range": [0, 1] }, "propOpenness": { "value": 0.75, "range": [0, 1] }, "zindex": { "value": -5, "range": [-9999999, 9999999] }, "aspect": { "value": 0.727274993256742 }, "ignoreShapeAspect": { "value": true }, "shapePosition": { "value": { "x": 0, "y": 0 } }, "shapeScale": { "value": { "x": 0.5, "y": 0.5 } }, "shapeEdgeSoftness": { "value": 0, "range": [0, 0.5] }, "shapeRadius": { "value": 0, "range": [0, 2] }, "currentScroll": { "value": 0 }, "scrollLerp": { "value": 0.07 }, "gooey": { "value": true }, "infiniteGooey": { "value": false }, "growSize": { "value": 4, "range": [1, 15] }, "durationOut": { "value": 1, "range": [0.1, 5] }, "durationIn": { "value": 1.5, "range": [0.1, 5] }, "displaceAmount": { "value": 0.5 }, "masker": { "value": true }, "maskVal": { "value": 1.3, "range": [1, 5] }, "scrollType": { "value": 0 }, "geoVertex": { "range": [1, 64], "value": 1 }, "noEffectGooey": { "value": true }, "onMouse": { "value": 0 }, "noise_speed": { "value": 0.2, "range": [0, 10] }, "metaball": { "value": 0.4, "range": [0, 2] }, "discard_threshold": { "value": 0.5, "range": [0, 1] }, "antialias_threshold": { "value": 0, "range": [0, 0.1] }, "noise_height": { "value": 0.5, "range": [0, 2] }, "noise_scale": { "value": 10, "range": [0, 100] } }
+          });
+        }
+      } catch (e) {
+        console.error("Shery initialization failed:", e)
+      }
+    }, 100);
 
+    return () => {
+      clearTimeout(timer)
+      // Cleanup if possible. 
+      // Shery doesn't have a clear destroy method documented for all cases, 
+      // but removing the canvas helps. For now we just let it be.
+      const canvases = document.querySelectorAll('canvas[id^="shader-"]')
+      canvases.forEach(c => c.remove())
+    }
+  }, []) // Run once on mount. 
+  // NOTE: In a real dynamic list, this should re-run when list changes, 
+  // but for static portfolio data, once is enough.
 
   return (
     <section id="projects" className="projects">
@@ -209,7 +226,7 @@ const Projects: React.FC = () => {
             return (
               <motion.article
                 key={index}
-                className="project-card-3d"
+                className={`project-card-3d ${isActive ? 'active' : ''}`}
                 initial={false}
                 animate={{
                   scale: cardStyle.scale,
@@ -256,6 +273,12 @@ const Projects: React.FC = () => {
                 }}
               >
                 <div className="project-glow" aria-hidden="true"></div>
+                <div className="project-img-wrapper" style={{ height: '150px', overflow: 'hidden', borderRadius: '12px 12px 0 0', position: 'relative' }}>
+                  <div className="project-img-container" style={{ width: '100%', height: '100%' }}>
+                    <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                </div>
+
                 <div className="project-card__content">
                   <header className="project-header">
                     <h3>{project.title}</h3>
@@ -267,7 +290,7 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
                   <div className="project-links">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link ghost">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link ghost magnetic">
                       <FiGithub /> Code
                     </a>
                   </div>
@@ -278,10 +301,10 @@ const Projects: React.FC = () => {
         </div>
         <div className="projects-controls-bottom">
           <div className="projects-carousel-controls">
-            <button onClick={() => scrollCarousel('prev')} aria-label="Previous projects">
+            <button className="magnetic" onClick={() => scrollCarousel('prev')} aria-label="Previous projects">
               <FiArrowLeft />
             </button>
-            <button onClick={() => scrollCarousel('next')} aria-label="Next projects">
+            <button className="magnetic" onClick={() => scrollCarousel('next')} aria-label="Next projects">
               <FiArrowRight />
             </button>
           </div>
