@@ -194,8 +194,8 @@ const Projects: React.FC = () => {
                   scale: cardStyle.scale,
                   rotateY: isActive ? cardStyle.rotateY + mousePosition.y : cardStyle.rotateY,
                   rotateX: isActive ? mousePosition.x : 0,
-                  x: cardStyle.translateX,
-                  y: cardStyle.translateY,
+                  x: `calc(-50% + ${cardStyle.translateX}px)`,
+                  y: `calc(-50% + ${cardStyle.translateY}px)`,
                   z: cardStyle.translateZ,
                   opacity: cardStyle.opacity,
                   filter: cardStyle.filter,
@@ -213,8 +213,7 @@ const Projects: React.FC = () => {
                   transformOrigin: 'center center',
                   left: '50%',
                   top: '50%',
-                  marginLeft: `calc(min(-210px, -42.5vw) + ${cardStyle.translateX}px)`,
-                  marginTop: `calc(-200px + ${cardStyle.translateY}px)`,
+                  position: 'absolute',
                 }}
                 onMouseMove={(event) => {
                   if (!isActive) return
