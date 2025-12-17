@@ -2,8 +2,6 @@ import React, { useRef, useEffect, useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { FiGithub, FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import './Projects.css'
-// @ts-ignore
-import Shery from 'sheryjs'
 
 interface Project {
   title: string
@@ -17,7 +15,7 @@ interface Project {
 const Projects: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   const projectsData: Project[] = [
@@ -160,13 +158,6 @@ const Projects: React.FC = () => {
     }
   }
 
-  const stopAutoplay = () => {
-    if (autoplayRef.current) {
-      clearInterval(autoplayRef.current)
-      autoplayRef.current = null
-    }
-  }
-
   // Keyboard navigation
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -179,35 +170,6 @@ const Projects: React.FC = () => {
     window.addEventListener('keydown', handleKeyPress)
     return () => window.removeEventListener('keydown', handleKeyPress)
   }, [scrollCarousel])
-
-  useEffect(() => {
-    // Initializing Shery Effect
-    // Wrap in timeout to ensure DOM elements are rendered
-    const timer = setTimeout(() => {
-      try {
-        if (Shery) {
-          Shery.imageEffect(".project-img-container", {
-            style: 2, // Liquid distortion effect
-            //  debug: true, // debug panel to tune parameters
-            config: { "resolutionXY": { "value": 100 }, "distortion": { "value": true }, "mode": { "value": -3 }, "mousemove": { "value": 0 }, "modeA": { "value": 1 }, "modeN": { "value": 0 }, "speed": { "value": 1, "range": [-500, 500] }, "frequency": { "value": 50, "range": [-800, 800] }, "angle": { "value": 0.5, "range": [0, 3.141592653589793] }, "waveFactor": { "value": 1.4, "range": [-3, 3] }, "color": { "value": 10212607 }, "pixelStrength": { "value": 3, "range": [-20, 100, 0] }, "quality": { "value": 5, "range": [0, 40] }, "contrast": { "value": 1, "range": [-25, 25] }, "brightness": { "value": 1, "range": [-1, 25] }, "colorExuberance": { "value": 0.25, "range": [0, 2.5] }, "longevity": { "value": 1, "range": [0, 1] }, "propOpenness": { "value": 0.75, "range": [0, 1] }, "zindex": { "value": -5, "range": [-9999999, 9999999] }, "aspect": { "value": 0.727274993256742 }, "ignoreShapeAspect": { "value": true }, "shapePosition": { "value": { "x": 0, "y": 0 } }, "shapeScale": { "value": { "x": 0.5, "y": 0.5 } }, "shapeEdgeSoftness": { "value": 0, "range": [0, 0.5] }, "shapeRadius": { "value": 0, "range": [0, 2] }, "currentScroll": { "value": 0 }, "scrollLerp": { "value": 0.07 }, "gooey": { "value": true }, "infiniteGooey": { "value": false }, "growSize": { "value": 4, "range": [1, 15] }, "durationOut": { "value": 1, "range": [0.1, 5] }, "durationIn": { "value": 1.5, "range": [0.1, 5] }, "displaceAmount": { "value": 0.5 }, "masker": { "value": true }, "maskVal": { "value": 1.3, "range": [1, 5] }, "scrollType": { "value": 0 }, "geoVertex": { "range": [1, 64], "value": 1 }, "noEffectGooey": { "value": true }, "onMouse": { "value": 0 }, "noise_speed": { "value": 0.2, "range": [0, 10] }, "metaball": { "value": 0.4, "range": [0, 2] }, "discard_threshold": { "value": 0.5, "range": [0, 1] }, "antialias_threshold": { "value": 0, "range": [0, 0.1] }, "noise_height": { "value": 0.5, "range": [0, 2] }, "noise_scale": { "value": 10, "range": [0, 100] } }
-          });
-        }
-      } catch (e) {
-        console.error("Shery initialization failed:", e)
-      }
-    }, 100);
-
-    return () => {
-      clearTimeout(timer)
-      // Cleanup if possible. 
-      // Shery doesn't have a clear destroy method documented for all cases, 
-      // but removing the canvas helps. For now we just let it be.
-      const canvases = document.querySelectorAll('canvas[id^="shader-"]')
-      canvases.forEach(c => c.remove())
-    }
-  }, []) // Run once on mount. 
-  // NOTE: In a real dynamic list, this should re-run when list changes, 
-  // but for static portfolio data, once is enough.
 
   return (
     <section id="projects" className="projects">
