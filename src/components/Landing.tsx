@@ -46,7 +46,7 @@ const Landing: React.FC = () => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
     // Set initial states
-    gsap.set([titleWord1.current, titleWord2.current], { y: '100%' })
+    gsap.set([titleWord1.current, titleWord2.current], { opacity: 0, y: 40 })
     gsap.set(tagRef.current, { opacity: 0, y: 18 })
     gsap.set(subtitleRef.current, { opacity: 0, y: 18 })
     gsap.set(descRef.current, { opacity: 0, y: 18 })
@@ -58,13 +58,15 @@ const Landing: React.FC = () => {
         titleWord2.current,
       ], {
         y: 0,
-        stagger: 0.1,
-        duration: 1,
-        ease: 'power4.out'
+        opacity: 1,
+        stagger: 0.08,
+        duration: 0.75
       }, '-=0.2')
       .to(subtitleRef.current, { y: 0, opacity: 1, duration: 0.5 }, '-=0.4')
       .to(descRef.current, { y: 0, opacity: 1, duration: 0.5 }, '-=0.35')
       .to([ctaPrimary.current, ctaSecondary.current], { y: 0, opacity: 1, stagger: 0.12, duration: 0.45 }, '-=0.25')
+      // Ensure title stays visible
+      .set([titleWord1.current, titleWord2.current], { opacity: 1, clearProps: 'all' })
 
     const b1 = gsap.to(blob1.current, { x: 28, y: 18, duration: 12, yoyo: true, repeat: -1, ease: 'sine.inOut' })
     const b2 = gsap.to(blob2.current, { x: -20, y: -12, duration: 16, yoyo: true, repeat: -1, ease: 'sine.inOut' })
@@ -84,12 +86,7 @@ const Landing: React.FC = () => {
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about')
-    // aboutSection?.scrollIntoView({ behavior: 'smooth' })
-    // Lenis handles smooth scrolling, so we can just scrollTo
-    window.scrollTo({
-      top: aboutSection?.offsetTop,
-      behavior: 'smooth'
-    })
+    aboutSection?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -127,12 +124,8 @@ const Landing: React.FC = () => {
         </div>
 
         <h1 className="landing-title">
-          <div className="overflow-hidden inline-block mr-4">
-            <span className="title-word block" ref={titleWord1}>Abhishek</span>
-          </div>
-          <div className="overflow-hidden inline-block">
-            <span className="title-word block" ref={titleWord2}>Gaud</span>
-          </div>
+          <span className="title-word" ref={titleWord1}>Abhishek</span>
+          <span className="title-word" ref={titleWord2}>Gaud</span>
         </h1>
 
         <p className="landing-subtitle" ref={subtitleRef}>
@@ -144,11 +137,11 @@ const Landing: React.FC = () => {
         </p>
 
         <div className="landing-cta">
-          <a ref={ctaPrimary} href="mailto:ritikempire505@gmail.com" className="cta-button primary magnetic">
+          <a ref={ctaPrimary} href="mailto:ritikempire505@gmail.com" className="cta-button primary">
             <FiMail size={18} />
             <span>Get In Touch</span>
           </a>
-          <a ref={ctaSecondary} href="https://github.com/abhishekgaud7" target="_blank" rel="noopener noreferrer" className="cta-button secondary magnetic">
+          <a ref={ctaSecondary} href="https://github.com/abhishekgaud7" target="_blank" rel="noopener noreferrer" className="cta-button secondary">
             <FiGithub size={18} />
             <span>GitHub Profile</span>
           </a>

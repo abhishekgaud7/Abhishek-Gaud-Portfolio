@@ -252,7 +252,7 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
                   <div className="project-links">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link ghost magnetic">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link ghost">
                       <FiGithub /> Code
                     </a>
                   </div>
@@ -263,10 +263,10 @@ const Projects: React.FC = () => {
         </div>
         <div className="projects-controls-bottom">
           <div className="projects-carousel-controls">
-            <button className="magnetic" onClick={() => scrollCarousel('prev')} aria-label="Previous projects">
+            <button onClick={() => scrollCarousel('prev')} aria-label="Previous projects">
               <FiArrowLeft />
             </button>
-            <button className="magnetic" onClick={() => scrollCarousel('next')} aria-label="Next projects">
+            <button onClick={() => scrollCarousel('next')} aria-label="Next projects">
               <FiArrowRight />
             </button>
           </div>
