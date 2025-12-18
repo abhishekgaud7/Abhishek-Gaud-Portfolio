@@ -74,6 +74,38 @@ const Projects: React.FC = () => {
       link: 'https://github.com/abhishekgaud7/otp-email-verification',
       github: 'https://github.com/abhishekgaud7/otp-email-verification',
       image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      title: 'Own Portfolio',
+      description: 'Interactive 3D frontend portfolio showcasing work built with React, TypeScript, GSAP and Three.js.',
+      tech: ['React', 'TypeScript', 'GSAP', 'Three.js'],
+      link: 'https://github.com/abhishekgaud7',
+      github: 'https://github.com/abhishekgaud7',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      title: 'Build-Setu',
+      description: 'Infrastructure and construction management platform with real-time tracking and reporting.',
+      tech: ['React', 'Node.js', 'PostgreSQL'],
+      link: '#',
+      github: 'https://github.com/abhishekgaud7',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      title: 'RoomNest',
+      description: 'Real estate and accommodation platform for seamless property finding and management.',
+      tech: ['Next.js', 'Firebase', 'Tailwind CSS'],
+      link: '#',
+      github: 'https://github.com/abhishekgaud7',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      title: 'Productr',
+      description: 'Productivity and project management tool designed for agile teams and individuals.',
+      tech: ['React', 'Redux', 'Express'],
+      link: '#',
+      github: 'https://github.com/abhishekgaud7',
+      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80'
     }
   ]
 
