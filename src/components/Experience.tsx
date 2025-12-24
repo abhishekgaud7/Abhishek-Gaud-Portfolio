@@ -10,13 +10,12 @@ interface ExperienceItem {
 
 const experienceData: ExperienceItem[] = [
   {
-    company: 'DevTown',
-    role: 'Front End Developer Intern',
-    period: 'June 2022 – Oct 2022',
+    company: 'Saiket Systems',
+    role: 'Java Development INTERN',
+    period: 'Jul. 2025 – Aug. 2025',
     contributions: [
-      'Translated high-fidelity UI concepts into responsive React components and micro-interactions.',
-      'Improved perceived performance with code-splitting and reusable animation primitives built with GSAP.',
-      'Partnered with backend team to wire REST endpoints and validate data contracts in Postman.'
+      'Backend Engineering: Leveraged Java and the Spring Boot framework to architect scalable backend services and RESTful APIs, significantly optimizing server-side logic and application data flow.',
+      'Database Management & Testing: Designed and optimized efficient database schemas using MySQL and Hibernate (ORM), ensuring high code reliability and performance through rigorous unit testing with JUnit.'
     ]
   },
   {
@@ -30,12 +29,13 @@ const experienceData: ExperienceItem[] = [
     ]
   },
   {
-    company: 'Saiket Systems',
-    role: 'Java Development INTERN',
-    period: 'Jul. 2025 – Aug. 2025',
+    company: 'DevTown',
+    role: 'Front End Developer Intern',
+    period: 'June 2022 – Oct 2022',
     contributions: [
-      'Backend Engineering: Leveraged Java and the Spring Boot framework to architect scalable backend services and RESTful APIs, significantly optimizing server-side logic and application data flow.',
-      'Database Management & Testing: Designed and optimized efficient database schemas using MySQL and Hibernate (ORM), ensuring high code reliability and performance through rigorous unit testing with JUnit.'
+      'Translated high-fidelity UI concepts into responsive React components and micro-interactions.',
+      'Improved perceived performance with code-splitting and reusable animation primitives built with GSAP.',
+      'Partnered with backend team to wire REST endpoints and validate data contracts in Postman.'
     ]
   }
 ]
