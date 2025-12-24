@@ -28,6 +28,15 @@ const experienceData: ExperienceItem[] = [
       'Owned CI-ready API documentation, JWT security hardening, and regression test data with Postman/Maven scripts.',
       'Mentored junior interns on Git workflows, review-ready pull requests, and accessibility-focused styling.'
     ]
+  },
+  {
+    company: 'Saiket Systems',
+    role: 'Java Development INTERN',
+    period: 'Jul. 2025 – Aug. 2025',
+    contributions: [
+      'Backend Engineering: Leveraged Java and the Spring Boot framework to architect scalable backend services and RESTful APIs, significantly optimizing server-side logic and application data flow.',
+      'Database Management & Testing: Designed and optimized efficient database schemas using MySQL and Hibernate (ORM), ensuring high code reliability and performance through rigorous unit testing with JUnit.'
+    ]
   }
 ]
 

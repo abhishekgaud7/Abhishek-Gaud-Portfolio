@@ -129,7 +129,7 @@ const Landing: React.FC = () => {
         </h1>
 
         <p className="landing-subtitle" ref={subtitleRef}>
-          Full Stack Developer • Data Scientist • Software Engineer
+          Java Full Stack Developer • Full Stack Developer • Data Scientist • Software Engineer
         </p>
 
         <p className="landing-description" ref={descRef}>
