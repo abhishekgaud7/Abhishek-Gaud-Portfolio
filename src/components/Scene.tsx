@@ -30,8 +30,13 @@ const Scene: React.FC = () => {
     dirLight.position.set(5, 10, 7);
     scene.add(dirLight);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(window.devicePixelRatio || 1);
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+      powerPreference: 'high-performance',
+      precision: 'mediump'
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.clientWidth, container.clientHeight, false);
     rendererRef.current = renderer;
     container.appendChild(renderer.domElement);
