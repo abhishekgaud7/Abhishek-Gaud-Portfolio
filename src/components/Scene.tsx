@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { loadCachedGLTF } from './utils/gltfCache';
 
 const Scene: React.FC = () => {
@@ -8,6 +9,7 @@ const Scene: React.FC = () => {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+  const controlsRef = useRef<OrbitControls | null>(null);
 
   useEffect(() => {
     const container = mountRef.current;
@@ -15,10 +17,18 @@ const Scene: React.FC = () => {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.set(0, 1.6, 3);
+    camera.position.set(0, 1.6, 4);
 
     sceneRef.current = scene;
     cameraRef.current = camera;
+
+    // Add Lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
+    dirLight.position.set(5, 10, 7);
+    scene.add(dirLight);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio || 1);
@@ -26,19 +36,27 @@ const Scene: React.FC = () => {
     rendererRef.current = renderer;
     container.appendChild(renderer.domElement);
 
+    // Add OrbitControls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.enableZoom = false; // Disable zoom to keep layout stable
+    controlsRef.current = controls;
+
     let mounted = true;
 
     loadCachedGLTF('/models/char.glb')
-      .then((obj) => {
+      .then((obj: any) => {
         if (!mounted) return;
-        obj.position.set(0, 0, 0);
+        obj.position.set(0, -1, 0); // Lowered slightly to center the character
         scene.add(obj);
       })
-      .catch((err) => console.error('GLTF load error', err));
+      .catch((err: any) => console.error('GLTF load error', err));
 
     const animate = () => {
       if (!mounted) return;
       if (rendererRef.current && sceneRef.current && cameraRef.current) {
+        if (controlsRef.current) controlsRef.current.update();
         rendererRef.current.render(sceneRef.current, cameraRef.current);
       }
       rafRef.current = requestAnimationFrame(animate);
@@ -70,6 +88,7 @@ const Scene: React.FC = () => {
       document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('resize', onResize);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (controlsRef.current) controlsRef.current.dispose();
 
       if (sceneRef.current) {
         sceneRef.current.traverse((obj: any) => {
@@ -94,7 +113,7 @@ const Scene: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: '100%', height: '100%' }} />;
+  return <div ref={mountRef} style={{ width: '100%', height: '100%', cursor: 'grab' }} />;
 };
 
 export default Scene;
