@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'vp-surface': 'rgba(15,23,42,0.85)',
+        'vp-surface': 'rgba(255, 255, 255, 0.85)',
       },
       boxShadow: {
-        'vp-soft': '0 24px 80px rgba(0,0,0,0.45)',
+        'vp-soft': '0 24px 80px rgba(0,0,0,0.1)',
       },
       borderRadius: {
         'vp-xl': '26px',
