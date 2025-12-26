@@ -338,14 +338,23 @@
 
   .projects-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .project-card__content {
     padding: 24px;
+    min-height: auto;
+  }
+
+  .projects-grid {
+    padding-bottom: 30px;
   }
 
   .projects-grid {
     scroll-snap-type: x proximity;
+  }
+
+  .project-card {
+    min-width: 300px;
   }
 }
