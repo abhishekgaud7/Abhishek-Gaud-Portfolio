@@ -8,7 +8,7 @@
   position: relative;
   overflow: hidden;
   padding: 100px 20px;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
 }
 
 .landing-bg {
@@ -147,7 +147,7 @@
   font-weight: 900;
   margin-bottom: 25px;
   line-height: 1.1;
-  color: #1e293b;
+  color: #f8fafc;
   letter-spacing: -2px;
   /* text-shadow: 
     0 0 20px rgba(99, 102, 241, 0.5),
@@ -174,7 +174,7 @@
 }
 
 .landing-title span {
-  color: #1e293b !important;
+  color: #f8fafc !important;
   opacity: 1 !important;
 }
 
@@ -217,7 +217,7 @@
 
 .landing-description {
   font-size: 1.2rem;
-  color: #334155;
+  color: #cbd5e1;
   margin-bottom: 50px;
   line-height: 1.9;
   font-weight: 500;

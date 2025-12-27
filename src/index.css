@@ -5,12 +5,14 @@
 :root {
   --primary: #8b5cf6;
   --secondary: #ec4899;
-  --dark: #020617;
-  --light: #ffffff;
-  --text: #020617;
-  --text-light: #334155;
-  --bg: #f8fafc;
-  --border: #e2e8f0;
+  --bg: #020617;
+  --text: #f8fafc;
+  --text-light: #cbd5e1;
+  --border: #1e293b;
+  --dark: #f8fafc;
+  /* Re-mapped for easier refactor: Dark variable = Light color */
+  --light: #020617;
+  /* Re-mapped: Light variable = Dark color */
 }
 
 * {

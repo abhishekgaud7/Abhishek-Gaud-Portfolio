@@ -1,6 +1,6 @@
 .certificate {
   padding: 120px 0;
-  background: linear-gradient(180deg, rgba(236, 72, 153, 0.03) 0%, rgba(99, 102, 241, 0.03) 100%);
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
 }
 
 .certificate-container {
@@ -14,7 +14,7 @@
 }
 
 .certificate-head h2 {
-  color: #1e293b;
+  color: #f8fafc;
   font-size: 2.3rem;
 }
 
@@ -32,7 +32,7 @@
   padding: 30px;
   border-radius: 18px;
   border: 1px solid rgba(99, 102, 241, 0.1);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(15, 23, 42, 0.6);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
 }
@@ -49,25 +49,25 @@
 
 .certificate-info h3 {
   margin: 0;
-  color: #1e293b;
+  color: #f8fafc;
   font-size: 1.4rem;
 }
 
 .certificate-qualification {
-  color: #334155;
+  color: #cbd5e1;
   margin-top: 4px;
 }
 
 .certificate-location {
   font-size: 0.9rem;
-  color: #475569;
+  color: #94a3b8;
   font-weight: 500;
 }
 
 .certificate-info ul {
   margin: 16px 0;
   padding-left: 20px;
-  color: #334155;
+  color: #cbd5e1;
   line-height: 1.7;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .certificate-image-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(15, 23, 42, 0.6);
   border-radius: 18px;
   border: 1px solid rgba(99, 102, 241, 0.1);
   overflow: hidden;
@@ -134,20 +134,20 @@
 }
 
 .certificate-image-info h4 {
-  color: #1e293b;
+  color: #f8fafc;
   font-size: 1.1rem;
   margin: 0 0 8px 0;
   font-weight: 600;
 }
 
 .certificate-issuer {
-  color: #334155;
+  color: #cbd5e1;
   font-size: 0.9rem;
   margin: 4px 0;
 }
 
 .certificate-date {
-  color: #475569;
+  color: #94a3b8;
   font-size: 0.85rem;
   margin: 4px 0 0 0;
 }

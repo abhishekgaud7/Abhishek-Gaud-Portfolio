@@ -1,6 +1,6 @@
 .education {
   padding: 120px 0;
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
 }
 
 .education-container {
@@ -14,7 +14,7 @@
 }
 
 .education-head h2 {
-  color: #1e293b;
+  color: #f8fafc;
   font-size: 2.3rem;
 }
 
@@ -32,7 +32,7 @@
   padding: 30px;
   border-radius: 18px;
   border: 1px solid rgba(99, 102, 241, 0.1);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(15, 23, 42, 0.6);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
 }
@@ -49,19 +49,19 @@
 
 .education-info h3 {
   margin: 0;
-  color: #1e293b;
+  color: #f8fafc;
   font-size: 1.4rem;
 }
 
 .education-qualification {
-  color: #334155;
+  color: #cbd5e1;
   margin-top: 4px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .education-location {
   font-size: 0.9rem;
-  color: #64748b;
+  color: #94a3b8;
 }
 
 .education-info ul {

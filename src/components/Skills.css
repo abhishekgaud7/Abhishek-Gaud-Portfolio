@@ -26,7 +26,7 @@
 }
 
 .skill-card h3 {
-  color: #1e293b;
+  color: #f8fafc;
   margin-bottom: 25px;
   font-size: 1.4rem;
   background: linear-gradient(135deg, #6366f1, #ec4899);
@@ -36,7 +36,7 @@
 }
 
 .skill-subtitle {
-  color: #334155;
+  color: #cbd5e1;
   margin-top: -10px;
   margin-bottom: 20px;
   font-size: 0.95rem;

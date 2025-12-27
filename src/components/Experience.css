@@ -18,7 +18,7 @@
 
 .experience-heading h2 {
   font-size: 2.2rem;
-  color: var(--dark);
+  color: #f8fafc;
 }
 
 .experience-grid {
@@ -27,8 +27,8 @@
 }
 
 .experience-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
   border-radius: 16px;
   padding: 28px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -58,16 +58,16 @@
 }
 
 .experience-card h3 {
-  color: var(--dark);
+  color: #f8fafc;
   font-size: 1.3rem;
   margin: 0;
 }
 
 .experience-period {
-  color: #334155;
+  color: #cbd5e1;
   font-size: 0.95rem;
   white-space: nowrap;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .experience-card ul {
@@ -80,7 +80,7 @@
 }
 
 .experience-card li {
-  color: #1e293b;
+  color: #e2e8f0;
   line-height: 1.6;
   position: relative;
   padding-left: 20px;
