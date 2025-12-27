@@ -39,8 +39,6 @@ const certificateImages: CertificateImage[] = [
     id: 'cert-1',
     title: 'Certificate of Training Completion',
     image: '/assets/acmegrade-cert.jpg',
-    issuer: 'AcmeGrade',
-    date: '12 Sep 2023 - 12 Oct 2023'
   },
 ]
 
