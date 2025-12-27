@@ -21,7 +21,7 @@ const experienceData: ExperienceItem[] = [
   {
     company: 'AcmeGrade',
     role: 'Web Developer Intern',
-    period: 'Aug 2022 – Dec 2023',
+    period: '12 Sep 2023 – 12 Oct 2023',
     contributions: [
       'Delivered full-stack features with Spring Boot, Hibernate, and MySQL—covering auth, dashboards, and reporting flows.',
       'Owned CI-ready API documentation, JWT security hardening, and regression test data with Postman/Maven scripts.',
