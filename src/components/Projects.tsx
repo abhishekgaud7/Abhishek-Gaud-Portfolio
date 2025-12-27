@@ -201,7 +201,6 @@ const Projects: React.FC = () => {
     }
     window.addEventListener('keydown', handleKeyPress)
     return () => window.removeEventListener('keydown', handleKeyPress)
-      ```
   }, [scrollCarousel])
 
   return (
@@ -221,14 +220,14 @@ const Projects: React.FC = () => {
             return (
               <motion.article
                 key={index}
-                className={`project - card - 3d ${ isActive ? 'active' : '' } `}
+                className={`project - card - 3d ${isActive ? 'active' : ''} `}
                 initial={false}
                 animate={{
                   scale: cardStyle.scale,
                   rotateY: isActive ? cardStyle.rotateY + mousePosition.y : cardStyle.rotateY,
                   rotateX: isActive ? mousePosition.x : 0,
-                  x: `calc(-50 % + ${ cardStyle.translateX }px)`,
-                  y: `calc(-50 % + ${ cardStyle.translateY }px)`,
+                  x: `calc(-50 % + ${cardStyle.translateX}px)`,
+                  y: `calc(-50 % + ${cardStyle.translateY}px)`,
                   z: cardStyle.translateZ,
                   opacity: cardStyle.opacity,
                   filter: cardStyle.filter,

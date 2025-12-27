@@ -63,7 +63,7 @@ const Experience: React.FC = () => {
                   <li key={idx}>{point}</li>
                 ))}
               </ul>
-            </article>
+            </div>
           ))}
         </div>
       </div>
