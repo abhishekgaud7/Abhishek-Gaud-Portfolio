@@ -37,10 +37,10 @@ const certificateData: CertificateItem[] = [
 const certificateImages: CertificateImage[] = [
   {
     id: 'cert-1',
-    title: 'Example Certificate',
-    image: 'https://placehold.co/600x400?text=Certificate+Placeholder',
-    issuer: 'Example Organization',
-    date: '2024'
+    title: 'Certificate of Training Completion',
+    image: '/assets/acmegrade-cert.jpg',
+    issuer: 'AcmeGrade',
+    date: '12 Sep 2023 - 12 Oct 2023'
   },
 ]
 
