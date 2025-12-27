@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+ import React, { useRef, useEffect, useState } from 'react'
 import { FiGithub, FiMail, FiChevronDown } from 'react-icons/fi'
 import gsap from 'gsap'
 import './Landing.css'
