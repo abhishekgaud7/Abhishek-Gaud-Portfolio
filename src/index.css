@@ -1,19 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
 
 :root {
-  --primary: #8b5cf6;
-  --secondary: #ec4899;
-  --bg: #020617;
-  --text: #f8fafc;
-  --text-light: #cbd5e1;
-  --border: #1e293b;
-  --dark: #f8fafc;
-  /* Re-mapped for easier refactor: Dark variable = Light color */
-  --light: #020617;
-  /* Re-mapped: Light variable = Dark color */
+  /* Earthy / Retro Palette */
+  --bg: #F9F7F2;
+  /* Cream/Off-white */
+  --text: #1C2E25;
+  /* Dark Forest Green */
+  --primary: #C66C49;
+  /* Terracotta/Burnt Orange */
+  --secondary: #1F3A2E;
+  /* Deep Green */
+  --accent: #EAB308;
+  /* Mustard Yellow */
+  --light-text: #F9F7F2;
+
+  /* Component bg mappings */
+  --card-bg: #FFFFFF;
+  --border: #DBCDBA;
 }
 
 * {
@@ -29,12 +32,19 @@ html {
 
 body {
   font-family: 'Outfit', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.serif {
+  font-family: 'Playfair Display', serif;
 }
 
 section {
@@ -43,14 +53,12 @@ section {
 }
 
 h2 {
-  font-size: 2.8rem;
-  margin-bottom: 50px;
+  font-size: 3.5rem;
+  margin-bottom: 40px;
   text-align: center;
-  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--secondary);
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 h3 {
@@ -60,7 +68,8 @@ h3 {
 }
 
 p {
-  color: var(--text-light);
+  color: var(--text);
+  opacity: 0.9;
   line-height: 1.8;
   line-height: 1.8;
   font-weight: 400;

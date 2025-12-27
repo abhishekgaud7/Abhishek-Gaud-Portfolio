@@ -1,4 +1,4 @@
- import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { FiGithub, FiMail, FiChevronDown } from 'react-icons/fi'
 import gsap from 'gsap'
 import './Landing.css'
@@ -92,58 +92,30 @@ const Landing: React.FC = () => {
   return (
     <section id="home" className="landing">
       <div className="landing-bg">
-        {/* Video background: place /public/videos/hero.mp4 for autoplayed hero */}
-        {showVideo && (
-          <video
-            className="landing-video"
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            src="/videos/hero.mp4"
-          />
-        )}
-        {/* If device supports WebGL you can optionally mount the Scene component */}
-        {show3D ? (
-          <React.Suspense fallback={null}>
-            <div className="landing-scene" aria-hidden>
-              <Scene />
-            </div>
-          </React.Suspense>
-        ) : null}
-        <div className="blob blob-1" ref={blob1} />
-        <div className="blob blob-2" ref={blob2} />
-        <div className="blob blob-3" ref={blob3} />
+        {/* Decorative Retro Elements */}
+        <div className="retro-shape circle-1"></div>
+        <div className="retro-shape star-1">✦</div>
+        <div className="retro-shape star-2">✦</div>
       </div>
 
       <div className="landing-content">
         <div className="landing-intro">
-          <span className="intro-tag" ref={tagRef}>Welcome to my portfolio</span>
+          <span className="intro-tag" ref={tagRef}>Full Stack Developer</span>
         </div>
 
         <h1 className="landing-title">
-          <span className="title-word" ref={titleWord1}>Abhishek</span>
-          <span className="title-word" ref={titleWord2}>Gaud</span>
+          <span className="title-word serif">Hello,</span>
+          <br />
+          <span className="title-word serif">I'm Abhishek!</span>
         </h1>
 
         <p className="landing-subtitle" ref={subtitleRef}>
-          Java Full Stack Developer • Data Scientist • Software Engineer
-        </p>
-
-        <p className="landing-description" ref={descRef}>
-          Crafting beautiful and scalable digital experiences with modern technologies. Specialized in MERN Stack, Java Spring Boot, and Machine Learning.
+          I am a self-taught Developer based in India with extensive experience in building scalable web applications.
         </p>
 
         <div className="landing-cta">
-          <a ref={ctaPrimary} href="mailto:ritikempire505@gmail.com" className="cta-button primary">
-            <FiMail size={18} />
-            <span>Get In Touch</span>
-          </a>
-          <a ref={ctaSecondary} href="https://github.com/abhishekgaud7" target="_blank" rel="noopener noreferrer" className="cta-button secondary">
-            <FiGithub size={18} />
-            <span>GitHub Profile</span>
+          <a ref={ctaPrimary} href="https://linkedin.com/in/abhishekgaud" className="cta-button primary">
+            LinkedIn Profile
           </a>
         </div>
 
@@ -159,6 +131,12 @@ const Landing: React.FC = () => {
         <button className="scroll-indicator" onClick={scrollToAbout}>
           <FiChevronDown size={20} />
         </button>
+      </div>
+
+      <div className="landing-image-section">
+        <div className="image-frame">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&q=80" alt="Abhishek Gaud" />
+        </div>
       </div>
     </section>
   )
