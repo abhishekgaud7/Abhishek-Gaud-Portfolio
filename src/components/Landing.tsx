@@ -3,8 +3,7 @@ import { FiGithub, FiMail, FiChevronDown } from 'react-icons/fi'
 import gsap from 'gsap'
 import './Landing.css'
 
-// Scene will be dynamically imported when needed to avoid increasing initial bundle size
-const Scene = React.lazy(() => import('./Scene'))
+// Scene removed for Retro Theme
 
 const Landing: React.FC = () => {
   const tagRef = useRef<HTMLSpanElement | null>(null)
@@ -17,9 +16,9 @@ const Landing: React.FC = () => {
   const blob1 = useRef<HTMLDivElement | null>(null)
   const blob2 = useRef<HTMLDivElement | null>(null)
   const blob3 = useRef<HTMLDivElement | null>(null)
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   const videoRef = useRef<HTMLVideoElement | null>(null)
-  const [showVideo, setShowVideo] = useState(false)
-  const [show3D, setShow3D] = useState(false)
+  /* eslint-enable @typescript-eslint/no-unused-vars */
 
   useEffect(() => {
     // Feature detection: prefer-reduced-motion or low device memory -> disable heavy visuals
@@ -38,9 +37,7 @@ const Landing: React.FC = () => {
 
     // Only enable video/3D when user hasn't opted for reduced motion and device is not low power
     if (!prefersReducedMotion && !isLowPower) {
-      // Prefer a short MP4 video in public folder: /videos/hero.mp4
-      setShowVideo(true)
-      if (supportsWebGL) setShow3D(true)
+      // 3D/Video disabled for Retro Theme
     }
 
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
