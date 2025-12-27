@@ -22,6 +22,7 @@ const Navbar: React.FC = () => {
           <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
           <li><a href="#skills" onClick={() => setIsOpen(false)}>Skills</a></li>
           <li><a href="#projects" onClick={() => setIsOpen(false)}>Projects</a></li>
+          <li><a href="#certificate" onClick={() => setIsOpen(false)}>Certificates</a></li>
           <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
         </ul>
       </div>

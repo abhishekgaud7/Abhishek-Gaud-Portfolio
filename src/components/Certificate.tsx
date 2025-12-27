@@ -24,9 +24,9 @@ const certificateData: CertificateItem[] = [
     qualification: 'Full Stack Java Developer',
     location: 'Ahmedabad, India',
     details: [
-        'Completed an intensive Full Stack Java Development course.',
-        'Skills: C, C++, SQL, HTML, CSS, JavaScript, Bootstrap, jQuery, React.js, Java, JSP, Servlet, JDBC, Spring Boot, Hibernate, Microservices, RESTful API.',
-        'Winner of multiple coding events and competitions.'
+      'Completed an intensive Full Stack Java Development course.',
+      'Skills: C, C++, SQL, HTML, CSS, JavaScript, Bootstrap, jQuery, React.js, Java, JSP, Servlet, JDBC, Spring Boot, Hibernate, Microservices, RESTful API.',
+      'Winner of multiple coding events and competitions.'
     ],
     meta: 'Additional Course'
   },
@@ -35,14 +35,13 @@ const certificateData: CertificateItem[] = [
 // Certificate Images Gallery
 // Yahan aap certificate images add kar sakte hain
 const certificateImages: CertificateImage[] = [
-  // Example structure - aap yahan apne certificates add kar sakte hain
-  // {
-  //   id: 'cert-1',
-  //   title: 'Certificate Name',
-  //   image: '/certificates/cert-1.jpg',
-  //   issuer: 'Issuing Organization',
-  //   date: '2024'
-  // },
+  {
+    id: 'cert-1',
+    title: 'Example Certificate',
+    image: 'https://placehold.co/600x400?text=Certificate+Placeholder',
+    issuer: 'Example Organization',
+    date: '2024'
+  },
 ]
 
 const Certificate: React.FC = () => {
@@ -87,8 +86,8 @@ const Certificate: React.FC = () => {
               {certificateImages.map((cert) => (
                 <div key={cert.id} className="certificate-image-card">
                   <div className="certificate-image-wrapper">
-                    <img 
-                      src={cert.image} 
+                    <img
+                      src={cert.image}
                       alt={cert.title}
                       className="certificate-image"
                       loading="lazy"
