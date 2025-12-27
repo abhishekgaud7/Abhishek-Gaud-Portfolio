@@ -138,17 +138,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 650px;
-  /* Taller for better 3D view */
+  min-height: 550px;
+  /* Reduced height */
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
   perspective: 2000px;
-  /* Stronger perspective */
   perspective-origin: center center;
   overflow: visible;
-  padding: 100px 40px 60px 40px;
-  /* More padding */
+  padding: 60px 40px 40px 40px;
+  /* Less padding */
   transform-style: preserve-3d;
 }
 
