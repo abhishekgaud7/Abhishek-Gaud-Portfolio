@@ -57,11 +57,15 @@
   color: var(--secondary);
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
+  font-weight: 700;
+  /* Bolder */
 }
 
 .certificate-qualification {
   color: var(--text);
   margin-top: 4px;
+  font-weight: 600;
+  /* Bolder */
 }
 
 .certificate-location {

@@ -29,6 +29,8 @@
   font-family: 'Playfair Display', serif;
   margin-bottom: 25px;
   font-size: 1.4rem;
+  font-weight: 700;
+  /* Bolder */
 }
 
 .skill-subtitle {
@@ -38,6 +40,8 @@
   margin-bottom: 20px;
   font-size: 0.95rem;
   line-height: 1.5;
+  font-weight: 600;
+  /* Bolder */
 }
 
 .skill-items {
