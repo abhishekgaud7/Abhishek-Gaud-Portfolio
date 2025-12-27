@@ -147,7 +147,7 @@
   font-weight: 900;
   margin-bottom: 25px;
   line-height: 1.1;
-  color: var(--dark);
+  color: #1e293b;
   letter-spacing: -2px;
   /* text-shadow: 
     0 0 20px rgba(99, 102, 241, 0.5),
@@ -174,7 +174,7 @@
 }
 
 .landing-title span {
-  color: var(--dark) !important;
+  color: #1e293b !important;
   opacity: 1 !important;
 }
 

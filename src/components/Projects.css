@@ -74,7 +74,7 @@
 
 .projects-header h2 {
   font-size: 2.5rem;
-  color: var(--dark);
+  color: #1e293b;
   text-align: center;
   width: 100%;
   margin: 0;
@@ -147,7 +147,7 @@
 }
 
 .projects-grid::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(200, 200, 200, 0.2);
 }
 
 .project-card {
@@ -236,7 +236,7 @@
 .project-header h3 {
   margin: 14px 0 12px;
   font-size: 1.5rem;
-  color: var(--dark);
+  color: #1e293b;
 }
 
 .project-header p {

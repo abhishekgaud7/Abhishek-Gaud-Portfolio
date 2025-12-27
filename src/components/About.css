@@ -12,14 +12,14 @@
 .about-text {
   font-size: 1.15rem;
   line-height: 1.9;
-  color: #cbd5e1;
+  color: #1e293b;
   margin-bottom: 25px;
   text-align: center;
   transition: all 0.3s;
 }
 
 .about-text:hover {
-  color: #e2e8f0;
+  color: #0f172a;
 }
 
 .about-highlights {
@@ -52,7 +52,7 @@
 
 .highlight-card p {
   font-size: 0.9rem;
-  color: #cbd5e1;
+  color: #475569;
 }
 
 @media (max-width: 768px) {

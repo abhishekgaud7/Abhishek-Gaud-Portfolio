@@ -1,6 +1,6 @@
 .certificate {
   padding: 120px 0;
-  background: linear-gradient(180deg, rgba(8, 12, 24, 0.95) 0%, rgba(16, 23, 42, 0.95) 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .certificate-container {
@@ -14,7 +14,7 @@
 }
 
 .certificate-head h2 {
-  color: #fff;
+  color: #1e293b;
   font-size: 2.3rem;
 }
 
@@ -31,9 +31,9 @@
   gap: 30px;
   padding: 30px;
   border-radius: 18px;
-  border: 1px solid rgba(99, 102, 241, 0.35);
-  background: rgba(15, 23, 42, 0.8);
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
 }
 
@@ -43,30 +43,30 @@
   border-radius: 999px;
   background: rgba(99, 102, 241, 0.18);
   border: 1px solid rgba(99, 102, 241, 0.5);
-  color: rgba(255, 255, 255, 0.85);
+  color: #6366f1;
   font-weight: 600;
 }
 
 .certificate-info h3 {
   margin: 0;
-  color: #fff;
+  color: #1e293b;
   font-size: 1.4rem;
 }
 
 .certificate-qualification {
-  color: rgba(255, 255, 255, 0.75);
+  color: #475569;
   margin-top: 4px;
 }
 
 .certificate-location {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #64748b;
 }
 
 .certificate-info ul {
   margin: 16px 0;
   padding-left: 20px;
-  color: rgba(226, 232, 240, 0.9);
+  color: #334155;
   line-height: 1.7;
 }
 
@@ -80,7 +80,7 @@
   border-radius: 12px;
   background: rgba(236, 72, 153, 0.15);
   border: 1px solid rgba(236, 72, 153, 0.4);
-  color: rgba(255, 255, 255, 0.85);
+  color: #db2777;
   font-size: 0.85rem;
 }
 
@@ -93,11 +93,11 @@
 }
 
 .certificate-image-card {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 18px;
-  border: 1px solid rgba(99, 102, 241, 0.35);
+  border: 1px solid rgba(99, 102, 241, 0.1);
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -133,20 +133,20 @@
 }
 
 .certificate-image-info h4 {
-  color: #fff;
+  color: #1e293b;
   font-size: 1.1rem;
   margin: 0 0 8px 0;
   font-weight: 600;
 }
 
 .certificate-issuer {
-  color: rgba(255, 255, 255, 0.7);
+  color: #475569;
   font-size: 0.9rem;
   margin: 4px 0;
 }
 
 .certificate-date {
-  color: rgba(255, 255, 255, 0.5);
+  color: #64748b;
   font-size: 0.85rem;
   margin: 4px 0 0 0;
 }
