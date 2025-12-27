@@ -44,7 +44,9 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
+  position: relative;
+  z-index: 2;
+  color: var(--text);
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -166,22 +168,19 @@
   width: min(420px, 85vw);
   left: 50%;
   top: 50%;
-  border-radius: 24px;
-  overflow: visible;
+  border-radius: 12px;
+  overflow: hidden;
   padding: 2px;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  /* Finer border */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: #FFFFFF;
+  border: 4px solid var(--text);
+  box-shadow: 10px 10px 0px rgba(28, 46, 37, 0.2);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-color: rgba(99, 102, 241, 0.4);
-  /* Glow on hover */
+  box-shadow: 15px 15px 0px rgba(28, 46, 37, 0.3);
+  border-color: var(--primary);
 }
 
 .project-card::after {
@@ -195,7 +194,12 @@
 }
 
 .project-card {
-  transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  perspective: 1000px;
+  cursor: pointer;
+  height: 420px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
 }
 
 .project-card:hover {
