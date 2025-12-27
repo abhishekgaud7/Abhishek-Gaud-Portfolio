@@ -88,7 +88,7 @@ const Landing: React.FC = () => {
 
       <div className="landing-image-section">
         <div className="image-frame">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&q=80" alt="Abhishek Gaud" />
+          <img src="/images/profile.png" alt="Abhishek Gaud - Full Stack Developer" />
         </div>
       </div>
     </section>
