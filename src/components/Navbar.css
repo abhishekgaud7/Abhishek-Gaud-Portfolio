@@ -2,64 +2,43 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(2, 6, 23, 0.85);
-  /* Dark bg with slight transparency */
-  backdrop-filter: blur(10px);
+  background: rgba(249, 247, 242, 0.95);
+  /* Cream bg */
   z-index: 1000;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border);
   padding: 0 20px;
+  transition: all 0.3s ease;
 }
 
 .navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 15px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 .logo {
+  font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #a78bfa, #ec4899);
-  /* Adjusted for dark bg */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 2px;
-  transition: all 0.3s;
-}
-
-.logo:hover {
-  transform: scale(1.05);
+  color: var(--secondary);
+  /* Dark Green */
+  letter-spacing: -1px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 30px;
 }
 
 .nav-links a {
-  color: #f8fafc;
-  /* var(--dark) */
-  font-weight: 700;
-  transition: all 0.3s;
-  position: relative;
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
   font-size: 1.1rem;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background: linear-gradient(135deg, #a78bfa, #ec4899);
-  transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .nav-links a:hover::after {
@@ -124,8 +103,8 @@
     right: -100%;
     width: 70%;
     height: 100vh;
-    background: rgba(2, 6, 23, 0.98);
-    /* Dark bg for mobile menu */
+    background: var(--bg);
+    /* Cream bg for mobile menu */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -139,7 +118,8 @@
   }
 
   .nav-links a {
-    font-size: 1.2rem;
-    color: #f8fafc;
+    font-size: 1.5rem;
+    /* Larger for retro feel */
+    color: var(--text);
   }
 }
