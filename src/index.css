@@ -8,7 +8,7 @@
   --dark: #1e293b;
   --light: #ffffff;
   --text: #1e293b;
-  --text-light: #64748b;
+  --text-light: #475569;
   --bg: #ffffff;
   --border: #e2e8f0;
 }
@@ -33,6 +33,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  font-weight: 600;
 }
 
 section {
@@ -60,6 +61,7 @@ h3 {
 p {
   color: var(--text-light);
   line-height: 1.8;
+  font-weight: 500;
 }
 
 a {

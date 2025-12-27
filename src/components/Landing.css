@@ -8,7 +8,7 @@
   position: relative;
   overflow: hidden;
   padding: 100px 20px;
-  background: var(--bg);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
 }
 
 .landing-bg {
@@ -217,9 +217,10 @@
 
 .landing-description {
   font-size: 1.2rem;
-  color: var(--text-light);
+  color: #334155;
   margin-bottom: 50px;
   line-height: 1.9;
+  font-weight: 500;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;

@@ -1,6 +1,6 @@
 .achievements {
   padding: 120px 0;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.03) 0%, rgba(8, 14, 26, 0.03) 100%);
 }
 
 .achievements-container {
@@ -27,7 +27,7 @@
 }
 
 .achievements-head .lead {
-  color: #475569;
+  color: #334155;
   max-width: 720px;
   margin: 0 auto;
   line-height: 1.7;
@@ -72,7 +72,7 @@
 .achievement-index {
   font-size: 3rem;
   font-weight: 700;
-  color: rgba(148, 163, 184, 0.25);
+  color: rgba(99, 102, 241, 0.15);
 }
 
 .achievement-body {
@@ -86,7 +86,8 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
-  color: #64748b;
+  color: #475569;
+  font-weight: 600;
 }
 
 .achievement-body h3 {

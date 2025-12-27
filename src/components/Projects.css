@@ -240,8 +240,9 @@
 }
 
 .project-header p {
-  color: var(--text-light);
+  color: #334155;
   line-height: 1.7;
+  font-weight: 500;
 }
 
 .project-tech {

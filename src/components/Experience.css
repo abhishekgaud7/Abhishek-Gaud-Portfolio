@@ -64,9 +64,10 @@
 }
 
 .experience-period {
-  color: var(--text-light);
+  color: #334155;
   font-size: 0.95rem;
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .experience-card ul {
@@ -79,7 +80,7 @@
 }
 
 .experience-card li {
-  color: var(--text);
+  color: #1e293b;
   line-height: 1.6;
   position: relative;
   padding-left: 20px;

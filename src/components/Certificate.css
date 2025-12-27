@@ -1,6 +1,6 @@
 .certificate {
   padding: 120px 0;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.03) 0%, rgba(99, 102, 241, 0.03) 100%);
 }
 
 .certificate-container {
@@ -54,13 +54,14 @@
 }
 
 .certificate-qualification {
-  color: #475569;
+  color: #334155;
   margin-top: 4px;
 }
 
 .certificate-location {
   font-size: 0.9rem;
-  color: #64748b;
+  color: #475569;
+  font-weight: 500;
 }
 
 .certificate-info ul {
@@ -140,13 +141,13 @@
 }
 
 .certificate-issuer {
-  color: #475569;
+  color: #334155;
   font-size: 0.9rem;
   margin: 4px 0;
 }
 
 .certificate-date {
-  color: #64748b;
+  color: #475569;
   font-size: 0.85rem;
   margin: 4px 0 0 0;
 }

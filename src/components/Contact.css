@@ -1,6 +1,6 @@
 /* Contact Section General Styling */
 .contact {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
   color: #1e293b;
   overflow: hidden;
   /* Contains the animations */
@@ -24,7 +24,7 @@
 
 .contact-header .contact-subtitle {
   font-size: 1.1rem;
-  color: #64748b;
+  color: #475569;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -58,7 +58,7 @@
 .contact-form label {
   display: block;
   margin-bottom: 8px;
-  color: #475569;
+  color: #334155;
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -130,7 +130,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  color: #475569;
+  color: #334155;
   text-decoration: none;
   font-size: 1rem;
   padding: 10px;
