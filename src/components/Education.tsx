@@ -42,9 +42,9 @@ const Education: React.FC = () => {
 
         <div className="education-timeline">
           {educationData.map((edu, index) => (
-            <article key={index} className="education-card">
+            <div key={index} className="education-card reveal-animation" style={{ animationDelay: `${index * 100}ms` }}>
               <div className="education-marker">
-                <span>{edu.period}</span>
+                <span>{edu.year}</span>
               </div>
               <div className="education-info">
                 <header>

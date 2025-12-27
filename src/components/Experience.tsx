@@ -50,14 +50,14 @@ const Experience: React.FC = () => {
         </div>
         <div className="experience-grid">
           {experienceData.map((exp, index) => (
-            <article key={index} className="experience-card">
-              <header className="experience-meta">
+            <div key={index} className="experience-card reveal-animation" style={{ animationDelay: `${index * 100}ms` }}>
+              <div className="experience-header">
                 <div>
                   <p className="experience-company">{exp.company}</p>
                   <h3>{exp.role}</h3>
                 </div>
                 <span className="experience-period">{exp.period}</span>
-              </header>
+              </div>
               <ul>
                 {exp.contributions.map((point, idx) => (
                   <li key={idx}>{point}</li>

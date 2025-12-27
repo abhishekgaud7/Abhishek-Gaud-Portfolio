@@ -28,17 +28,18 @@
 
 .experience-card {
   background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+  /* More breathing room */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .experience-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--secondary);
+  transform: translateX(5px);
+  border-color: rgba(236, 72, 153, 0.4);
 }
 
 .experience-meta {
