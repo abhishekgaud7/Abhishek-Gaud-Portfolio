@@ -76,7 +76,8 @@
 
 .projects-header h2 {
   font-size: 2.5rem;
-  color: #f8fafc;
+  color: var(--secondary);
+  /* Dark green */
   text-align: center;
   width: 100%;
   margin: 0;
@@ -248,10 +249,12 @@
   color: #f8fafc;
 }
 
-.project-header p {
-  color: #cbd5e1;
+.projects-header p {
+  color: var(--secondary);
+  /* Dark green for readability */
+  max-width: 600px;
+  margin: 0 auto;
   line-height: 1.7;
-  font-weight: 400;
 }
 
 .project-tech {

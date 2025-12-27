@@ -61,8 +61,10 @@
 }
 
 .experience-card h3 {
-  color: #f8fafc;
-  font-size: 1.3rem;
+  color: var(--secondary);
+  /* Dark for visibility */
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
   margin: 0;
 }
 

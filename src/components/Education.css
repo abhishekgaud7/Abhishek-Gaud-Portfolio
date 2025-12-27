@@ -82,7 +82,8 @@
 .education-info ul {
   margin: 16px 0;
   padding-left: 20px;
-  color: #334155;
+  color: rgba(255, 255, 255, 0.95);
+  /* Brighter white */
   line-height: 1.7;
 }
 
