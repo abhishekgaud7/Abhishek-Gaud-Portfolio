@@ -1,6 +1,10 @@
 .education {
-  padding: 120px 0;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  min-height: 100vh;
+  padding: 100px 20px;
+  position: relative;
+  background-color: var(--secondary);
+  /* Deep Green */
+  color: var(--light-text);
 }
 
 .education-container {
@@ -30,11 +34,18 @@
   grid-template-columns: 200px 1fr;
   gap: 30px;
   padding: 30px;
-  border-radius: 18px;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  background: rgba(15, 23, 42, 0.6);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  /* Subtle glass on green */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  /* Sharper corners for retro */
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
 }
 
 .education-marker span {
@@ -54,14 +65,18 @@
 }
 
 .education-qualification {
-  color: #cbd5e1;
-  margin-top: 4px;
-  font-weight: 500;
+  color: #fab564;
+  /* Light Orange accent */
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
 }
 
 .education-location {
-  font-size: 0.9rem;
-  color: #94a3b8;
+  display: block;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
 }
 
 .education-info ul {

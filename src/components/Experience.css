@@ -17,8 +17,9 @@
 }
 
 .experience-heading h2 {
-  font-size: 2.2rem;
-  color: #f8fafc;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  color: var(--secondary);
 }
 
 .experience-grid {
@@ -27,19 +28,20 @@
 }
 
 .experience-card {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.4);
+  /* Semi-transparent white */
+  border: 2px solid var(--secondary);
+  border-radius: 0;
+  /* Boxy */
   padding: 32px;
-  /* More breathing room */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
+  box-shadow: 8px 8px 0px var(--secondary);
+  /* Retro hard shadow */
   transition: all 0.3s ease;
 }
 
 .experience-card:hover {
-  transform: translateX(5px);
-  border-color: rgba(236, 72, 153, 0.4);
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px var(--secondary);
 }
 
 .experience-meta {
@@ -51,11 +53,11 @@
 }
 
 .experience-company {
+  font-size: 1.1rem;
   color: var(--secondary);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 6px;
+  letter-spacing: 1px;
 }
 
 .experience-card h3 {
@@ -81,10 +83,20 @@
 }
 
 .experience-card li {
-  color: #e2e8f0;
+  color: var(--secondary);
   line-height: 1.6;
   position: relative;
   padding-left: 20px;
+}
+
+.experience {
+  min-height: 100vh;
+  padding: 100px 20px;
+  position: relative;
+  background-color: var(--accent);
+  /* Mustard Yellow */
+  color: var(--secondary);
+  /* Deep Green Text */
 }
 
 .experience-card li::before {
