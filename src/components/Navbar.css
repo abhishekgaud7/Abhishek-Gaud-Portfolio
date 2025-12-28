@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(249, 247, 242, 0.95);
+  background: var(--bg);
   /* Cream bg */
   z-index: 1000;
   border-bottom: 1px solid var(--border);
