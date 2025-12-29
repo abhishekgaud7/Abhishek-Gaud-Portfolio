@@ -69,10 +69,10 @@
 }
 
 .experience-period {
-  color: #cbd5e1;
+  color: var(--secondary);
   font-size: 0.95rem;
   white-space: nowrap;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .experience-card ul {

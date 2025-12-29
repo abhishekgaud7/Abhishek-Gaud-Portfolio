@@ -53,7 +53,7 @@
 
 .highlight-card p {
   font-size: 0.9rem;
-  color: #cbd5e1;
+  color: var(--secondary);
 }
 
 @media (max-width: 768px) {

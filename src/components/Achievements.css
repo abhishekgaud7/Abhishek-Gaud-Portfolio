@@ -93,13 +93,14 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 600;
 }
 
 .achievement-body h3 {
   font-size: 1.35rem;
-  color: #1e293b;
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
 .achievement-takeaway {
