@@ -30,11 +30,18 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
-  padding: 30px;
-  border-radius: 4px;
+  padding: 32px;
+  border-radius: 12px;
   border: 1px solid var(--border);
   background: #FFFFFF;
-  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
 }
 
 .certificate-marker span {
