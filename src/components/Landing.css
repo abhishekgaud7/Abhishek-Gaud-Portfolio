@@ -83,11 +83,14 @@
   color: #1F3A2E;
   /* Dark text */
   box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .cta-button.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(234, 179, 8, 0.4);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(234, 179, 8, 0.5);
+  background-color: #FBBF24;
 }
 
 /* Decorations */
