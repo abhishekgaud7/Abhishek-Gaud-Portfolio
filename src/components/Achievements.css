@@ -64,9 +64,10 @@
 }
 
 .achievement-index {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: rgba(99, 102, 241, 0.15);
+  color: rgba(255, 255, 255, 0.15);
+  font-family: 'Playfair Display', serif;
 }
 
 .achievement-body {
