@@ -18,16 +18,18 @@
 }
 
 .achievements-head .eyebrow {
-  color: var(--secondary);
+  color: rgba(255, 255, 255, 0.95);
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .achievements-head h2 {
   margin: 16px 0 12px;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .achievements-head .lead {
@@ -45,35 +47,20 @@
 }
 
 .achievement-card {
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  border-radius: 18px;
-  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 32px;
   position: relative;
   overflow: hidden;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  transition: transform 0.35s ease, border-color 0.35s ease;
-}
-
-.achievement-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-  padding: 30px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
 }
 
 .achievement-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.15);
-}
-
-.achievement-card:hover::after {
-  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .achievement-index {

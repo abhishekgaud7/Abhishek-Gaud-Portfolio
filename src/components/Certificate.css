@@ -15,7 +15,8 @@
 
 .certificate-head h2 {
   color: var(--secondary);
-  font-size: 2.3rem;
+  font-size: 2.8rem;
+  font-weight: 700;
 }
 
 .certificate-timeline {

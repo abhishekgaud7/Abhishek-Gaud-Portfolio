@@ -19,7 +19,18 @@
 
 .education-head h2 {
   color: #f8fafc;
-  font-size: 2.3rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.education-head .eyebrow {
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  display: block;
 }
 
 .education-timeline {
