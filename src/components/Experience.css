@@ -30,20 +30,21 @@
 }
 
 .experience-card {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   /* Semi-transparent white */
   border: 2px solid var(--secondary);
-  border-radius: 0;
-  /* Boxy */
-  padding: 32px;
-  box-shadow: 8px 8px 0px var(--secondary);
-  /* Retro hard shadow */
+  border-radius: 8px;
+  /* Slightly rounder corners */
+  padding: 36px;
+  box-shadow: 0 8px 24px rgba(31, 58, 46, 0.15);
+  /* Softer, more modern shadow */
   transition: all 0.3s ease;
 }
 
 .experience-card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 12px 12px 0px var(--secondary);
+  transform: translate(-2px, -4px);
+  box-shadow: 0 12px 32px rgba(31, 58, 46, 0.25);
+  border-color: var(--primary);
 }
 
 .experience-meta {
