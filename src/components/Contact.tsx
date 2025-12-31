@@ -15,7 +15,6 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     // Simulate form submission
-    // console.log('Form data submitted:', formData);
 
     // This is a simulation. In a real app, you would make an API call here.
     setTimeout(() => {
