@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     // Simulate form submission
-    console.log('Form data submitted:', formData);
+    // console.log('Form data submitted:', formData);
 
     // This is a simulation. In a real app, you would make an API call here.
     setTimeout(() => {
@@ -41,23 +41,23 @@ const Contact: React.FC = () => {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required autoComplete="name" placeholder="John Doe" />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Your Email</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required autoComplete="email" placeholder="john@example.com" />
               </div>
               <div className="form-group">
                 <label htmlFor="message">Your Message</label>
-                <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} required></textarea>
+                <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} required placeholder="Your message here..."></textarea>
               </div>
               <div className="form-group">
                 <button type="submit" className="submit-btn" disabled={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
-              {submitStatus === 'success' && <p className="submit-feedback success">Thank you! Your message has been sent.</p>}
-              {submitStatus === 'error' && <p className="submit-feedback error">Oops! Something went wrong. Please try again.</p>}
+              {submitStatus === 'success' && <p className="submit-feedback success" role="alert">Thank you! Your message has been sent.</p>}
+              {submitStatus === 'error' && <p className="submit-feedback error" role="alert">Oops! Something went wrong. Please try again.</p>}
             </form>
           </div>
 
@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
             </a>
           </div>
         </div>
-        
+
         <div className="contact-footer">
           <p>&copy; 2024 Abhishek Gaud. All rights reserved.</p>
         </div>
