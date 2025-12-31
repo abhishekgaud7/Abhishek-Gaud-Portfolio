@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import './App.css'
 import Navbar from './components/Navbar'
 import Landing from './components/Landing'
 import About from './components/About'
@@ -10,12 +8,9 @@ import Experience from './components/Experience'
 import Achievements from './components/Achievements'
 import Education from './components/Education'
 import Certificate from './components/Certificate'
+import './App.css'
 
 function App() {
-  useEffect(() => {
-    // Smooth scroll behavior
-    document.documentElement.style.scrollBehavior = 'smooth'
-  }, [])
 
   return (
     <div className="app">
