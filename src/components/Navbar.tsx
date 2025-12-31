@@ -21,7 +21,18 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="logo">AG</div>
-        <div className="menu-icon" onClick={toggleMenu}>
+        <div
+          className="menu-icon"
+          onClick={toggleMenu}
+          role="button"
+          tabIndex={0}
+          aria-label="Toggle menu"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              toggleMenu();
+            }
+          }}
+        >
           <div className={isOpen ? "bar open" : "bar"}></div>
           <div className={isOpen ? "bar open" : "bar"}></div>
           <div className={isOpen ? "bar open" : "bar"}></div>
