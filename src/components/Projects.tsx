@@ -27,7 +27,12 @@ const Projects: React.FC = () => {
     setActiveIndex(nextIndex)
   }, [activeIndex, totalProjects])
 
-  // 3D transform based on active index
+  /**
+   * Calculates the 3D transform styles for a card based on its index relative to the active index.
+   * Handles the circular carousel logic and visual depth effects (scale, blur, opacity).
+   * @param index - The index of the project card
+   * @returns CSSProperties for the card's transformation
+   */
   const getCardStyle = (index: number) => {
     const offset = index - activeIndex
     const absOffset = Math.abs(offset)
@@ -171,7 +176,7 @@ const Projects: React.FC = () => {
                 <div className="project-glow" aria-hidden="true"></div>
                 <div className="project-img-wrapper" style={{ height: '150px', overflow: 'hidden', borderRadius: '12px 12px 0 0', position: 'relative' }}>
                   <div className="project-img-container" style={{ width: '100%', height: '100%' }}>
-                    <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={project.image} alt={project.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                 </div>
 
@@ -186,7 +191,13 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
                   <div className="project-links">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link ghost">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link ghost"
+                      aria-label={`View source code for ${project.title}`}
+                    >
                       <FiGithub /> Code
                     </a>
                   </div>
