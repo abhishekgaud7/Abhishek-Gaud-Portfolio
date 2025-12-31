@@ -1,13 +1,17 @@
 # Abhishek Gaud — Portfolio
 
+![Built with Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+
 Animation-first frontend portfolio showcasing work built with React, TypeScript, GSAP and Three.js. Features an interactive 3D character, smooth scroll-driven motion, and performance-minded engineering.
 
 Tech stack
-- React
+- React 18
 - TypeScript
 - Vite
 - GSAP (ScrollTrigger)
 - Three.js (GLTF)
+- Framer Motion
+- React Icons
 
 Dev setup
 1. Install dependencies
