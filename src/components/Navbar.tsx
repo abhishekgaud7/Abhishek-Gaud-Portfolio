@@ -1,6 +1,15 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 
+const navLinks = [
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#certificate', label: 'Certificates' },
+  { href: '#contact', label: 'Contact' },
+];
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -18,12 +27,11 @@ const Navbar: React.FC = () => {
           <div className={isOpen ? "bar open" : "bar"}></div>
         </div>
         <ul className={isOpen ? "nav-links active" : "nav-links"}>
-          <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
-          <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
-          <li><a href="#skills" onClick={() => setIsOpen(false)}>Skills</a></li>
-          <li><a href="#projects" onClick={() => setIsOpen(false)}>Projects</a></li>
-          <li><a href="#certificate" onClick={() => setIsOpen(false)}>Certificates</a></li>
-          <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} onClick={() => setIsOpen(false)}>{link.label}</a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
