@@ -10,6 +10,8 @@ import Education from './components/Education'
 import Certificate from './components/Certificate'
 import './App.css'
 
+import Footer from './components/Footer'
+
 function App() {
 
   return (
@@ -24,6 +26,7 @@ function App() {
       <Projects />
       <Achievements />
       <Contact />
+      <Footer />
     </div>
   )
 }
