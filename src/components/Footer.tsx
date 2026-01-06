@@ -3,7 +3,7 @@ import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import './Footer.css';
 
 const Footer: React.FC = () => {
-    const currentYear = new Date().getFullYear();
+
 
     return (
         <footer className="footer">
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                     </a>
                 </div>
                 <p className="copyright">
-                    © {currentYear} Abhishek Gaud. All rights reserved.
+                    © 2024 Abhishek Gaud. All rights reserved.
                 </p>
             </div>
         </footer>

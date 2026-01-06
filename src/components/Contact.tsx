@@ -80,9 +80,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        <div className="contact-footer">
-          <p>&copy; 2024 Abhishek Gaud. All rights reserved.</p>
-        </div>
+
       </div>
     </section>
   );
