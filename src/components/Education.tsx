@@ -24,7 +24,7 @@ const Education: React.FC = () => {
                   <span className="education-location">{edu.location}</span>
                 </header>
                 <ul>
-                  {edu.details.map((detail, idx) => (
+                  {edu.details.map((detail: string, idx: number) => (
                     <li key={idx}>{detail}</li>
                   ))}
                 </ul>

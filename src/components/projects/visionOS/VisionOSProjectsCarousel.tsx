@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion'
-import { visionProjects } from '../../../data/projects'
+import { useState } from 'react'
+import { Project } from '../../../types'
+import { projectsData as visionProjects } from '../../../data/projects'
+import { motion, useMotionValue, useTransform, AnimatePresence, PanInfo } from 'framer-motion'
 
 const SPRING_CONFIG = {
   type: 'spring' as const,
@@ -21,7 +22,7 @@ export const VisionOSProjectsCarousel: React.FC = () => {
   const sceneRotateY = useTransform(dragX, [-300, 300], [-6, 6])
   const sceneTranslateX = useTransform(dragX, [-300, 300], [-40, 40])
 
-  const handleDragEnd = (_: any, info: { offset: { x: number } }) => {
+  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const threshold = 80
     const { x } = info.offset
 
@@ -115,14 +116,14 @@ export const VisionOSProjectsCarousel: React.FC = () => {
             className="relative w-full h-full flex items-center justify-center select-none cursor-grab active:cursor-grabbing"
           >
             <AnimatePresence initial={false}>
-              {visionProjects.map((project, index) => {
+              {visionProjects.map((project: Project, index: number) => {
                 const position = clampIndex(index - activeIndex, visionProjects.length)
                 const normalized =
                   position === 0
                     ? 0
                     : position > visionProjects.length / 2
-                    ? position - visionProjects.length
-                    : position
+                      ? position - visionProjects.length
+                      : position
 
                 const cfg = getCardConfig(normalized)
 
@@ -176,7 +177,7 @@ export const VisionOSProjectsCarousel: React.FC = () => {
                       </p>
 
                       <div className="flex flex-wrap gap-2 mt-3">
-                        {project.tech.map((t) => (
+                        {project.tech.map((t: string) => (
                           <span
                             key={t}
                             className="text-xs px-2 py-1 rounded-md bg-white/10 text-white/80 border border-white/10"

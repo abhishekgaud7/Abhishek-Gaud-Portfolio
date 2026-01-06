@@ -14,7 +14,7 @@ const Skills: React.FC = () => {
               <h3>{skill.category}</h3>
               {skill.description && <p className="skill-subtitle">{skill.description}</p>}
               <div className="skill-items">
-                {skill.items.map((item, idx) => (
+                {skill.items.map((item: string, idx: number) => (
                   <span key={idx} className="skill-tag">{item}</span>
                 ))}
               </div>

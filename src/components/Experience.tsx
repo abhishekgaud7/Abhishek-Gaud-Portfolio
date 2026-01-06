@@ -21,7 +21,7 @@ const Experience: React.FC = () => {
                 <span className="experience-period"><time>{exp.period}</time></span>
               </div>
               <ul>
-                {exp.contributions.map((point, idx) => (
+                {exp.contributions.map((point: string, idx: number) => (
                   <li key={idx}>{point}</li>
                 ))}
               </ul>
