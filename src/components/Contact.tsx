@@ -40,11 +40,11 @@ const Contact: React.FC = () => {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required autoComplete="name" placeholder="John Doe" />
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required autoComplete="name" placeholder="Your Name" />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Your Email</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required autoComplete="email" placeholder="john@example.com" />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required autoComplete="email" placeholder="Your Email" />
               </div>
               <div className="form-group">
                 <label htmlFor="message">Your Message</label>
