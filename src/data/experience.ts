@@ -2,6 +2,16 @@ import { ExperienceItem } from '../types';
 
 export const experienceData: ExperienceItem[] = [
     {
+        company: 'Freelancer',
+        role: 'Full Stack Developer',
+        period: 'Aug 2025 – Present',
+        contributions: [
+            'Successfully delivered diverse full-stack solutions for multiple clients, ensuring 100% fulfillment of business requirements.',
+            'Architected and deployed major projects including Nexaweb (Agency), MediGuardia (Healthcare), Build-Setu (Construction), and PG-Finder (Real Estate).',
+            'Managed complete project lifecycles from system design and client requirement gathering to production deployment.'
+        ]
+    },
+    {
         company: 'Saiket Systems',
         role: 'Java Development INTERN',
         period: 'Jul. 2025 – Aug. 2025',
