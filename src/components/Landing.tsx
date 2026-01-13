@@ -53,7 +53,7 @@ const Landing: React.FC = () => {
 
       <div className="landing-content">
         <div className="landing-intro">
-          <span className="intro-tag" ref={tagRef}>Full Stack Developer</span>
+          <span className="intro-tag" ref={tagRef}>Data Scientist | Java Full Stack Developer | B.Tech Graduate ’25 | Specialized in Spring Boot, React & Data Science | 3x Internship Experience</span>
         </div>
 
         <h1 className="landing-title">
@@ -88,7 +88,7 @@ const Landing: React.FC = () => {
 
       <div className="landing-image-section">
         <div className="image-frame">
-          <img src="/images/profile.png" alt="Abhishek Gaud - Full Stack Developer" />
+          <img src="/images/profile.png" alt="Abhishek Gaud - Data Scientist | Java Full Stack Developer" />
         </div>
       </div>
     </section>
