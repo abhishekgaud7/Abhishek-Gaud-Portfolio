@@ -2,6 +2,14 @@ import { Project } from '../types';
 
 export const projectsData: Project[] = [
   {
+    title: 'Nexaweb',
+    description: 'India\'s premium web agency delivering high-converting SaaS, AI, and e-commerce websites. Trusted by 50+ brands for 2x faster delivery.',
+    tech: ['React', 'Next.js', 'AI/ML Integration', 'Web Design'],
+    link: 'https://www.nexaweb.co.in',
+    github: '#',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80'
+  },
+  {
     title: 'MediGuardia',
     description: 'Your Personal AI Health Companion - An AI-powered health application that provides personalized health recommendations and insights.',
     tech: ['React', 'Node.js', 'AI/ML', 'MongoDB'],
