@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                     </a>
                 </div>
                 <p className="copyright">
-                    © 2024 Abhishek Gaud. All rights reserved.
+                    © 2025 Abhishek Gaud. All rights reserved.
                 </p>
             </div>
         </footer>
