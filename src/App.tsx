@@ -7,7 +7,7 @@ import Contact from './components/Contact'
 import Experience from './components/Experience'
 import Achievements from './components/Achievements'
 import Education from './components/Education'
-import Certificate from './components/Certificate'
+
 import './App.css'
 
 import Footer from './components/Footer'
@@ -21,7 +21,7 @@ function App() {
       <About />
       <Experience />
       <Education />
-      <Certificate />
+
       <Skills />
       <Projects />
       <Achievements />
