@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
                     <a href="https://github.com/abhishekgaud7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <FiGithub />
                     </a>
-                    <a href="https://linkedin.com/in/abhishekgaud" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/abhishek-gaud-cse" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <FiLinkedin />
                     </a>
                     <a href="mailto:ritikempire505@gmail.com" aria-label="Email">

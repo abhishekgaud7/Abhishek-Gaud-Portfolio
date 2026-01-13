@@ -67,7 +67,7 @@ const Landing: React.FC = () => {
         </p>
 
         <div className="landing-cta">
-          <a ref={ctaPrimary} href="https://linkedin.com/in/abhishekgaud" className="cta-button primary">
+          <a ref={ctaPrimary} href="https://www.linkedin.com/in/abhishek-gaud-cse" target="_blank" rel="noopener noreferrer" className="cta-button primary">
             LinkedIn Profile
           </a>
         </div>

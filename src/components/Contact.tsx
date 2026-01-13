@@ -65,9 +65,9 @@ const Contact: React.FC = () => {
               <FiMail />
               <span>ritikempire505@gmail.com</span>
             </a>
-            <a href="https://www.linkedin.com/in/abhishek-gaud-14008a398" target="_blank" rel="noopener noreferrer" className="contact-link-item">
+            <a href="https://www.linkedin.com/in/abhishek-gaud-cse" target="_blank" rel="noopener noreferrer" className="contact-link-item">
               <FiLinkedin />
-              <span>linkedin.com/in/abhishek-gaud-14008a398</span>
+              <span>linkedin.com/in/abhishek-gaud-cse</span>
             </a>
             <a href="tel:+919171214043" className="contact-link-item">
               <FiPhone />
