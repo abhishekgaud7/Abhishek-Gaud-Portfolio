@@ -40,7 +40,13 @@ const Navbar: React.FC = () => {
         <ul className={isOpen ? "nav-links active" : "nav-links"}>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a href={link.href} onClick={() => setIsOpen(false)}>{link.label}</a>
+              <a
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                aria-label={`Navigate to ${link.label} section`}
+              >
+                {link.label}
+              </a>
             </li>
           ))}
         </ul>
