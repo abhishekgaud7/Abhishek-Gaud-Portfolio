@@ -5,6 +5,11 @@ import './Projects.css'
 
 import { projectsData } from '../data/projects'
 
+/**
+ * Projects Component
+ * Displays a 3D carousel of featured projects with interactive details.
+ * Uses framed-motion for animations and local state for carousel navigation.
+ */
 const Projects: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
