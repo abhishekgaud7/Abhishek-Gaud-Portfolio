@@ -30,7 +30,7 @@ const Education: React.FC = () => {
                 </ul>
                 {edu.meta && <div className="education-meta">{edu.meta}</div>}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
