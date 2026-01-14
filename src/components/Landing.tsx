@@ -3,7 +3,6 @@ import { FiGithub, FiMail, FiChevronDown } from 'react-icons/fi'
 import gsap from 'gsap'
 import './Landing.css'
 
-// Scene removed for Retro Theme
 
 const Landing: React.FC = () => {
   const tagRef = useRef<HTMLSpanElement | null>(null)

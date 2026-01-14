@@ -190,7 +190,7 @@ export const VisionOSProjectsCarousel: React.FC = () => {
                       <a
                         href={project.link}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="mt-4 inline-block text-blue-300 hover:text-blue-200 hover:underline text-sm"
                       >
                         Visit Project →

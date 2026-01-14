@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
 
         <div className="contact-body">
           <div className="contact-form-wrapper">
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form" onSubmit={handleSubmit} aria-label="Contact Form">
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
                 <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required autoComplete="name" placeholder="Your Name" />
