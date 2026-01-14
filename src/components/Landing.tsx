@@ -72,15 +72,15 @@ const Landing: React.FC = () => {
         </div>
 
         <div className="social-links">
-          <a href="mailto:ritikempire505@gmail.com" className="social-icon" title="Email">
+          <a href="mailto:ritikempire505@gmail.com" className="social-icon" title="Email" aria-label="Send email to ritikempire505@gmail.com">
             <FiMail size={20} />
           </a>
-          <a href="https://github.com/abhishekgaud7" target="_blank" rel="noopener noreferrer" className="social-icon" title="GitHub">
+          <a href="https://github.com/abhishekgaud7" target="_blank" rel="noopener noreferrer" className="social-icon" title="GitHub" aria-label="Visit GitHub Profile">
             <FiGithub size={20} />
           </a>
         </div>
 
-        <button className="scroll-indicator" onClick={scrollToAbout}>
+        <button className="scroll-indicator" onClick={scrollToAbout} aria-label="Scroll to About Section">
           <FiChevronDown size={20} />
         </button>
       </div>
