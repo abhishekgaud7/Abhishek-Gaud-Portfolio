@@ -10,7 +10,7 @@ const Skills: React.FC = () => {
         <h2>Skills & Expertise</h2>
         <div className="skills-grid">
           {skillsData.map((skill, index) => (
-            <div key={index} className="skill-card">
+            <article key={index} className="skill-card">
               <h3>{skill.category}</h3>
               {skill.description && <p className="skill-subtitle">{skill.description}</p>}
               <div className="skill-items">
@@ -18,7 +18,7 @@ const Skills: React.FC = () => {
                   <span key={idx} className="skill-tag">{item}</span>
                 ))}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
