@@ -87,7 +87,13 @@ const Landing: React.FC = () => {
 
       <div className="landing-image-section">
         <div className="image-frame">
-          <img src="/images/profile.png" alt="Abhishek Gaud - Java Full Stack Developer | Aspiring Data Scientist" />
+          <img
+            src="/images/profile.png"
+            alt="Abhishek Gaud - Java Full Stack Developer | Aspiring Data Scientist"
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
+          />
         </div>
       </div>
     </section>

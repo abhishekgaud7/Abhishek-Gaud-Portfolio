@@ -30,6 +30,12 @@ html {
   scroll-padding-top: 80px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: 'Outfit', sans-serif;
   background-color: var(--bg);
@@ -70,7 +76,6 @@ h3 {
 p {
   color: var(--text);
   opacity: 0.9;
-  line-height: 1.8;
   line-height: 1.8;
   font-weight: 400;
   letter-spacing: 0.01em;
