@@ -12,7 +12,7 @@ const Experience: React.FC = () => {
         </div>
         <div className="experience-grid">
           {experienceData.map((exp, index) => (
-            <div key={index} className="experience-card reveal-animation" style={{ animationDelay: `${index * 100}ms` }}>
+            <article key={index} className="experience-card reveal-animation" style={{ animationDelay: `${index * 100}ms` }}>
               <div className="experience-header">
                 <div>
                   <p className="experience-company">{exp.company}</p>
