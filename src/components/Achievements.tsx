@@ -15,7 +15,7 @@ const Achievements: React.FC = () => {
         </div>
         <div className="achievements-grid">
           {achievementsData.map((achievement, index) => (
-            <div key={index} className="achievement-card reveal-animation" style={{ animationDelay: `${index * 100}ms` }}>
+            <article key={index} className="achievement-card reveal-animation" style={{ animationDelay: `${index * 100}ms` }}>
               <div className="achievement-index" aria-label={`Achievement number ${index + 1}`}>#{String(index + 1).padStart(2, '0')}</div>
               <div className="achievement-body">
                 <p className="achievement-context">{achievement.context}</p>
@@ -23,7 +23,7 @@ const Achievements: React.FC = () => {
                 <p className="achievement-takeaway">{achievement.takeaway}</p>
                 <span className="achievement-meta">{achievement.meta}</span>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
