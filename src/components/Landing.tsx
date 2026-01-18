@@ -94,6 +94,8 @@ const Landing: React.FC = () => {
             loading="eager"
             decoding="sync"
             fetchPriority="high"
+            width="380"
+            height="480"
           />
         </div>
       </div>
