@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { FiGithub, FiMail, FiChevronDown } from 'react-icons/fi'
 import gsap from 'gsap'
+import { SOCIALS } from '../data/socials'
 import './Landing.css'
 
 
@@ -46,8 +47,8 @@ const Landing: React.FC = () => {
       <div className="landing-bg">
         {/* Decorative Retro Elements */}
         <div className="retro-shape circle-1"></div>
-        <div className="retro-shape star-1">✦</div>
-        <div className="retro-shape star-2">✦</div>
+        <div className="retro-shape star-1" aria-hidden="true">✦</div>
+        <div className="retro-shape star-2" aria-hidden="true">✦</div>
       </div>
 
       <div className="landing-content">
@@ -66,16 +67,16 @@ const Landing: React.FC = () => {
         </p>
 
         <div className="landing-cta">
-          <a ref={ctaPrimary} href="https://www.linkedin.com/in/abhishek-gaud-cse" target="_blank" rel="noopener noreferrer" className="cta-button primary">
+          <a ref={ctaPrimary} href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="cta-button primary">
             LinkedIn Profile
           </a>
         </div>
 
         <div className="social-links">
-          <a href="mailto:ritikempire505@gmail.com" className="social-icon" title="Email" aria-label="Send email to ritikempire505@gmail.com">
+          <a href={`mailto:${SOCIALS.email}`} className="social-icon" title="Email" aria-label={`Send email to ${SOCIALS.email}`}>
             <FiMail size={20} />
           </a>
-          <a href="https://github.com/abhishekgaud7" target="_blank" rel="noopener noreferrer" className="social-icon" title="GitHub" aria-label="Visit GitHub Profile">
+          <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="social-icon" title="GitHub" aria-label="Visit GitHub Profile">
             <FiGithub size={20} />
           </a>
         </div>
