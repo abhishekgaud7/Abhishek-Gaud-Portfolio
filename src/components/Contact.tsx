@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiMail, FiGithub, FiLinkedin, FiPhone } from 'react-icons/fi';
+import { SOCIALS } from '../data/socials';
 import './Contact.css';
 
 const Contact: React.FC = () => {
@@ -61,19 +62,19 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="contact-info">
-            <a href="mailto:ritikempire505@gmail.com" className="contact-link-item">
+            <a href={`mailto:${SOCIALS.email}`} className="contact-link-item">
               <FiMail />
-              <span>ritikempire505@gmail.com</span>
+              <span>{SOCIALS.email}</span>
             </a>
-            <a href="https://www.linkedin.com/in/abhishek-gaud-cse" target="_blank" rel="noopener noreferrer" className="contact-link-item">
+            <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link-item">
               <FiLinkedin />
               <span>linkedin.com/in/abhishek-gaud-cse</span>
             </a>
-            <a href="tel:+919171214043" className="contact-link-item">
+            <a href={`tel:${SOCIALS.phoneTel}`} className="contact-link-item">
               <FiPhone />
-              <span>+91 91712 14043</span>
+              <span>{SOCIALS.phone}</span>
             </a>
-            <a href="https://github.com/abhishekgaud7" target="_blank" rel="noopener noreferrer" className="contact-link-item">
+            <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="contact-link-item">
               <FiGithub />
               <span>github.com/abhishekgaud7</span>
             </a>
