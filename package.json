@@ -2,6 +2,15 @@
   "name": "abhishek-gaud-portfolio",
   "private": true,
   "version": "0.1.0",
+  "description": "Animation-first React portfolio with an interactive 3D character, smooth GSAP scroll animations, and performance-first engineering.",
+  "author": "Abhishek Gaud",
+  "keywords": [
+    "react",
+    "typescript",
+    "gsap",
+    "threejs",
+    "portfolio"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite --host",
