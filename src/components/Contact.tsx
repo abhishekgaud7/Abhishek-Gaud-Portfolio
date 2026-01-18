@@ -62,19 +62,19 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="contact-info">
-            <a href={`mailto:${SOCIALS.email}`} className="contact-link-item">
+            <a href={`mailto:${SOCIALS.email}`} className="contact-link-item" aria-label="Send email">
               <FiMail />
               <span>{SOCIALS.email}</span>
             </a>
-            <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link-item">
+            <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link-item" aria-label="LinkedIn Profile">
               <FiLinkedin />
               <span>linkedin.com/in/abhishek-gaud-cse</span>
             </a>
-            <a href={`tel:${SOCIALS.phoneTel}`} className="contact-link-item">
+            <a href={`tel:${SOCIALS.phoneTel}`} className="contact-link-item" aria-label="Call me">
               <FiPhone />
               <span>{SOCIALS.phone}</span>
             </a>
-            <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="contact-link-item">
+            <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="contact-link-item" aria-label="GitHub Profile">
               <FiGithub />
               <span>github.com/abhishekgaud7</span>
             </a>
