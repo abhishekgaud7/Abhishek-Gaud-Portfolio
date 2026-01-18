@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="logo">AG</div>
+        <div className="logo" aria-label="Abhishek Gaud Logo">AG</div>
         <div
           className="menu-icon"
           onClick={toggleMenu}
@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
           <div className={isOpen ? "bar open" : "bar"}></div>
         </div>
         <ul className={isOpen ? "nav-links active" : "nav-links"}>
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
