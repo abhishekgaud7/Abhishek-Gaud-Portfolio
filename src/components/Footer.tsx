@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { SOCIALS } from '../data/socials';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -9,13 +10,13 @@ const Footer: React.FC = () => {
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-socials">
-                    <a href="https://github.com/abhishekgaud7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <FiGithub />
                     </a>
-                    <a href="https://www.linkedin.com/in/abhishek-gaud-cse" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <FiLinkedin />
                     </a>
-                    <a href="mailto:ritikempire505@gmail.com" aria-label="Email">
+                    <a href={`mailto:${SOCIALS.email}`} aria-label="Email">
                         <FiMail />
                     </a>
                 </div>
