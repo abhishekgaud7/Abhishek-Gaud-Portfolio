@@ -1,15 +1,19 @@
 // Components
-import About from './components/About'
-import Achievements from './components/Achievements'
-import Certificate from './components/Certificate'
-import Contact from './components/Contact'
-import Education from './components/Education'
-import Experience from './components/Experience'
-import Footer from './components/Footer'
-import Landing from './components/Landing'
 import Navbar from './components/Navbar'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
+import Landing from './components/Landing'
+import Footer from './components/Footer'
+import Loading from './components/Loading'
+import { Suspense, lazy } from 'react'
+
+// Lazy load non-critical sections
+const About = lazy(() => import('./components/About'))
+const Achievements = lazy(() => import('./components/Achievements'))
+const Certificate = lazy(() => import('./components/Certificate'))
+const Contact = lazy(() => import('./components/Contact'))
+const Education = lazy(() => import('./components/Education'))
+const Experience = lazy(() => import('./components/Experience'))
+const Projects = lazy(() => import('./components/Projects'))
+const Skills = lazy(() => import('./components/Skills'))
 
 // Styles
 import './App.css'
@@ -20,14 +24,16 @@ function App(): JSX.Element {
     <div className="app">
       <Navbar />
       <Landing />
-      <About />
-      <Experience />
-      <Education />
-      <Skills />
-      <Projects />
-      <Achievements />
-      <Certificate />
-      <Contact />
+      <Suspense fallback={<Loading />}>
+        <About />
+        <Experience />
+        <Education />
+        <Skills />
+        <Projects />
+        <Achievements />
+        <Certificate />
+        <Contact />
+      </Suspense>
       <Footer />
     </div>
   )
