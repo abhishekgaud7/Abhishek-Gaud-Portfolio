@@ -11,7 +11,7 @@ const About: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="space-y-6 text-gray-300 leading-relaxed text-lg">
+          <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
             <p className="glass p-6 rounded-2xl border-l-4 border-primary">
               I am a <strong>Data Scientist</strong> and <strong>Java Full Stack Developer</strong> with a relentless passion for solving complex problems through <strong>Data Structures & Algorithms (DSA)</strong>.
               With a strong foundation in computer science and mathematics, I blend analytical thinking with engineering precision to build scalable applications and data-driven solutions.
@@ -29,11 +29,11 @@ const About: React.FC = () => {
               { icon: "📊", title: "Data Science & ML", desc: "Proficient in Python, Pandas, NumPy, and Building Predictive Models." },
               { icon: "🧩", title: "DSA & Problem Solving", desc: "Strong command over Algorithms, LeetCode, and Performance Optimization." }
             ].map((item, index) => (
-              <div key={index} className="glass p-6 rounded-2xl hover:bg-white/5 transition-colors duration-300 flex items-start gap-4 transform hover:-translate-y-1">
+              <div key={index} className="glass p-6 rounded-2xl hover:bg-black/5 transition-colors duration-300 flex items-start gap-4 transform hover:-translate-y-1">
                 <div className="text-4xl">{item.icon}</div>
                 <div>
-                  <h4 className="text-xl font-bold font-heading text-white mb-2">{item.title}</h4>
-                  <p className="text-gray-400 text-sm">{item.desc}</p>
+                  <h4 className="text-xl font-bold font-heading text-gray-900 mb-2">{item.title}</h4>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
                 </div>
               </div>
             ))}

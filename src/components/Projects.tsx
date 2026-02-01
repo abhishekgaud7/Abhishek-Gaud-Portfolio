@@ -118,14 +118,14 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="py-32 relative overflow-hidden min-h-screen flex flex-col justify-center">
-      {/* Background Elements */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Background Elements - Deep Space Nebula */}
+      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 w-full h-full flex flex-col">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 text-gradient">Featured Projects</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">Explore some of my recent work, blending creativity with technical excellence.</p>
+          <h2 className="text-5xl md:text-7xl font-bold font-heading mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-secondary to-primary drop-shadow-[0_0_15px_rgba(0,243,255,0.3)]">Featured Projects</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg font-light tracking-wide">Explore my timeline of digital creations.</p>
         </div>
 
         <div className="relative h-[500px] w-full perspective-1000 flex items-center justify-center">
@@ -136,7 +136,7 @@ const Projects: React.FC = () => {
             return (
               <motion.article
                 key={index}
-                className="absolute w-[350px] md:w-[450px] aspect-[4/5] bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden cursor-pointer"
+                className="absolute w-[350px] md:w-[450px] aspect-[4/5] bg-glass backdrop-blur-md border border-white/40 rounded-3xl overflow-hidden cursor-pointer shadow-glass group"
                 initial={false}
                 animate={{
                   scale: cardStyle.scale,
@@ -169,19 +169,19 @@ const Projects: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <div className="absolute bottom-4 left-4 z-20">
-                    <h3 className="text-2xl font-bold font-heading text-white mb-1">{project.title}</h3>
+                  <div className="absolute bottom-6 left-6 z-20">
+                    <h3 className="text-3xl font-bold font-heading text-white mb-2 drop-shadow-md">{project.title}</h3>
                     <div className="flex gap-2 flex-wrap">
                       {project.tech.slice(0, 3).map((t, i) => (
-                        <span key={i} className="text-xs px-2 py-1 rounded bg-white/10 text-gray-200 border border-white/5">{t}</span>
+                        <span key={i} className="text-xs px-3 py-1 rounded-full bg-white/20 text-white border border-white/20 backdrop-blur-sm shadow-sm">{t}</span>
                       ))}
                     </div>
                   </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="h-[45%] p-6 flex flex-col justify-between bg-black/20">
-                  <p className="text-gray-300 text-sm leading-relaxed line-clamp-4">
+                <div className="h-[45%] p-6 flex flex-col justify-between bg-white/60">
+                  <p className="text-gray-700 text-sm leading-relaxed line-clamp-4 font-normal">
                     {project.description}
                   </p>
 
@@ -192,7 +192,7 @@ const Projects: React.FC = () => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg bg-primary/80 hover:bg-primary text-white text-sm font-medium transition-colors shadow-lg shadow-primary/20"
+                        className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-primary hover:bg-primary/80 text-white font-bold transition-all shadow-neon hover:shadow-neon-cyan hover:-translate-y-1"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <FiExternalLink /> View
@@ -209,14 +209,14 @@ const Projects: React.FC = () => {
         <div className="flex justify-center gap-6 mt-12 pb-12">
           <button
             onClick={() => scrollCarousel('prev')}
-            className="p-4 rounded-full glass hover:bg-white/10 text-white transition-all transform hover:scale-110 active:scale-95"
+            className="p-4 rounded-full glass hover:bg-white/50 text-gray-800 transition-all transform hover:scale-110 active:scale-95 shadow-lg"
             aria-label="Previous Project"
           >
             <FiArrowLeft size={24} />
           </button>
           <button
             onClick={() => scrollCarousel('next')}
-            className="p-4 rounded-full glass hover:bg-white/10 text-white transition-all transform hover:scale-110 active:scale-95"
+            className="p-4 rounded-full glass hover:bg-white/50 text-gray-800 transition-all transform hover:scale-110 active:scale-95 shadow-lg"
             aria-label="Next Project"
           >
             <FiArrowRight size={24} />

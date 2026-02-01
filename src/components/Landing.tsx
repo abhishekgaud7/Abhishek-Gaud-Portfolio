@@ -30,7 +30,7 @@ const Landing: React.FC = () => {
             <span className="text-gradient">I'm Abhishek!</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-lg mx-auto lg:mx-0 leading-relaxed">
             Building scalable web applications and exploring the frontiers of AI/ML.
             Crafting digital experiences with precision and passion.
           </p>
@@ -46,17 +46,17 @@ const Landing: React.FC = () => {
             </a>
             <a
               href="#projects"
-              className="px-8 py-3 rounded-full glass border border-white/10 hover:border-white/30 text-white font-semibold transition-all duration-300 hover:bg-white/5"
+              className="px-8 py-3 rounded-full glass border border-gray-300 hover:border-primary/50 text-gray-800 font-semibold transition-all duration-300 hover:bg-black/5"
             >
               View Work
             </a>
           </div>
 
           <div className="flex items-center justify-center lg:justify-start gap-6 pt-6">
-            <a href={`mailto:${SOCIALS.email}`} className="text-gray-400 hover:text-accent transition-colors">
+            <a href={`mailto:${SOCIALS.email}`} className="text-gray-500 hover:text-accent transition-colors">
               <FiMail size={24} />
             </a>
-            <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+            <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-black transition-colors">
               <FiGithub size={24} />
             </a>
           </div>

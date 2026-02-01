@@ -35,50 +35,50 @@ const Contact: React.FC = () => {
           {/* Contact Info Side */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 text-white">Get In Touch</h2>
-              <p className="text-gray-400 text-lg leading-relaxed">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 text-gray-900">Get In Touch</h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Let's build something amazing together.
               </p>
             </div>
 
             <div className="space-y-6">
-              <a href={`mailto:${SOCIALS.email}`} className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/5 transition-all group">
+              <a href={`mailto:${SOCIALS.email}`} className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-black/5 transition-all group">
                 <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary/20 text-primary group-hover:scale-110 transition-transform">
                   <FiMail size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-medium text-gray-400">Email Me</h4>
-                  <p className="text-lg text-white font-medium">{SOCIALS.email}</p>
+                  <h4 className="text-sm font-medium text-gray-500">Email Me</h4>
+                  <p className="text-lg text-gray-900 font-medium">{SOCIALS.email}</p>
                 </div>
               </a>
 
-              <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/5 transition-all group">
+              <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-black/5 transition-all group">
                 <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#0a66c2]/20 text-[#0a66c2] group-hover:scale-110 transition-transform">
                   <FiLinkedin size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-medium text-gray-400">LinkedIn</h4>
-                  <p className="text-lg text-white font-medium">Connect Professionally</p>
+                  <h4 className="text-sm font-medium text-gray-500">LinkedIn</h4>
+                  <p className="text-lg text-gray-900 font-medium">Connect Professionally</p>
                 </div>
               </a>
 
-              <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/5 transition-all group">
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white group-hover:scale-110 transition-transform">
+              <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-black/5 transition-all group">
+                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-black/10 text-black group-hover:scale-110 transition-transform">
                   <FiGithub size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-medium text-gray-400">GitHub</h4>
-                  <p className="text-lg text-white font-medium">Check my Code</p>
+                  <h4 className="text-sm font-medium text-gray-500">GitHub</h4>
+                  <p className="text-lg text-gray-900 font-medium">Check my Code</p>
                 </div>
               </a>
             </div>
           </div>
 
           {/* Contact Form Side */}
-          <div className="glass p-8 md:p-10 rounded-3xl border border-white/5 shadow-2xl">
+          <div className="glass p-8 md:p-10 rounded-3xl border border-white/50 shadow-2xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-gray-300 ml-1">Your Name</label>
+                <label htmlFor="name" className="text-sm font-medium text-gray-700 ml-1">Your Name</label>
                 <input
                   type="text"
                   id="name"
@@ -86,13 +86,13 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-600"
+                  className="w-full bg-white/50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-400"
                   placeholder="John Doe"
                 />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-gray-300 ml-1">Your Email</label>
+                <label htmlFor="email" className="text-sm font-medium text-gray-700 ml-1">Your Email</label>
                 <input
                   type="email"
                   id="email"
@@ -100,13 +100,13 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-600"
+                  className="w-full bg-white/50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-400"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-gray-300 ml-1">Message</label>
+                <label htmlFor="message" className="text-sm font-medium text-gray-700 ml-1">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-600 resize-none"
+                  className="w-full bg-white/50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-400 resize-none"
                   placeholder="Tell me about your project..."
                 ></textarea>
               </div>

@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-5 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-0' : 'py-2'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`glass rounded-2xl transition-all duration-300 ${scrolled ? 'shadow-neon border-primary/20' : 'shadow-glass border-white/10'}`}>
+        <div className={`glass rounded-2xl transition-all duration-300 ${scrolled ? 'shadow-neon border-primary/20' : 'shadow-glass border-white/40'}`}>
           <div className="flex items-center justify-between h-16 px-6">
 
             {/* Logo */}
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-white/5"
+                    className="text-gray-600 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-black/5"
                   >
                     {link.label}
                   </a>
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
             <div className="-mr-2 flex md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-black hover:bg-black/5 focus:outline-none"
               >
                 <span className="sr-only">Open main menu</span>
                 <div className="relative w-6 h-6 flex flex-col justify-center gap-1.5">
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
                     key={link.label}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 transition-colors"
+                    className="text-gray-600 hover:text-black block px-3 py-2 rounded-md text-base font-medium hover:bg-black/5 transition-colors"
                   >
                     {link.label}
                   </a>

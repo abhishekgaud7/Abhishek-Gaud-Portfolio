@@ -148,9 +148,9 @@ export const VisionOSProjectsCarousel: React.FC = () => {
                     }}
                     className={`
                       absolute w-[360px] md:w-[420px] lg:w-[460px] h-[380px]
-                      rounded-3xl backdrop-blur-2xl bg-white/10 border border-white/20
-                      shadow-[0_18px_60px_rgba(0,0,0,0.5)]
-                      hover:shadow-[0_22px_80px_rgba(0,0,0,0.75)]
+                      rounded-3xl backdrop-blur-2xl bg-white/60 border border-white/40
+                      shadow-[0_18px_60px_rgba(0,0,0,0.1)]
+                      hover:shadow-[0_22px_80px_rgba(0,0,0,0.15)]
                       transition-shadow duration-300
                       overflow-hidden
                       flex flex-col
@@ -169,10 +169,10 @@ export const VisionOSProjectsCarousel: React.FC = () => {
                         />
                       </div>
 
-                      <h3 className="text-2xl font-semibold mt-4 text-white drop-shadow-sm">
+                      <h3 className="text-2xl font-semibold mt-4 text-gray-900 drop-shadow-sm">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-white/70 mt-2 line-clamp-3">
+                      <p className="text-sm text-gray-600 mt-2 line-clamp-3">
                         {project.description}
                       </p>
 
@@ -180,7 +180,7 @@ export const VisionOSProjectsCarousel: React.FC = () => {
                         {project.tech.map((t: string) => (
                           <span
                             key={t}
-                            className="text-xs px-2 py-1 rounded-md bg-white/10 text-white/80 border border-white/10"
+                            className="text-xs px-2 py-1 rounded-md bg-black/5 text-gray-700 border border-gray-200"
                           >
                             {t}
                           </span>
@@ -191,7 +191,7 @@ export const VisionOSProjectsCarousel: React.FC = () => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 inline-block text-blue-300 hover:text-blue-200 hover:underline text-sm"
+                        className="mt-4 inline-block text-primary hover:text-primary-glow hover:underline text-sm"
                       >
                         Visit Project →
                       </a>

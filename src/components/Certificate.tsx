@@ -3,7 +3,7 @@ import { certificateData, certificateImages } from '../data/certificates'
 
 const Certificate: React.FC = () => {
   return (
-    <section id="certificate" className="py-20 relative bg-black/40 text-white">
+    <section id="certificate" className="py-20 relative bg-white/50 text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Additional Courses Section */}
@@ -16,18 +16,18 @@ const Certificate: React.FC = () => {
 
           <div className="max-w-4xl mx-auto space-y-8">
             {certificateData.map((cert, index) => (
-              <div key={index} className="glass p-8 rounded-2xl border-l-4 border-primary hover:bg-white/5 transition-all duration-300">
+              <div key={index} className="glass p-8 rounded-2xl border-l-4 border-primary hover:bg-black/5 transition-all duration-300 bg-white/60">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">{cert.school}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{cert.school}</h3>
                     <p className="text-lg text-primary">{cert.qualification}</p>
                   </div>
-                  <span className="text-sm text-gray-400 bg-white/5 px-3 py-1 rounded-full">{cert.location}</span>
+                  <span className="text-sm text-gray-600 bg-black/5 px-3 py-1 rounded-full">{cert.location}</span>
                 </div>
 
                 <ul className="space-y-2 mb-4">
                   {cert.details.map((detail, idx) => (
-                    <li key={idx} className="text-gray-400 flex items-start gap-2 text-sm">
+                    <li key={idx} className="text-gray-600 flex items-start gap-2 text-sm">
                       <span className="text-primary mt-1">•</span>
                       {detail}
                     </li>
@@ -35,7 +35,7 @@ const Certificate: React.FC = () => {
                 </ul>
 
                 {cert.meta && (
-                  <div className="text-xs text-accent font-mono mt-4 pt-4 border-t border-white/5">
+                  <div className="text-xs text-accent font-mono mt-4 pt-4 border-t border-gray-200">
                     {cert.meta}
                   </div>
                 )}
@@ -67,7 +67,7 @@ const Certificate: React.FC = () => {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h4 className="text-lg font-bold text-white mb-2 leading-tight">{cert.title}</h4>
+                    <h4 className="text-lg font-bold text-gray-900 mb-2 leading-tight">{cert.title}</h4>
                     <div className="flex justify-between items-center text-sm">
                       {cert.issuer && <span className="text-primary font-medium">{cert.issuer}</span>}
                       {cert.date && <span className="text-gray-500">{cert.date}</span>}
