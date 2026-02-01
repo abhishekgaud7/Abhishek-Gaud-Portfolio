@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import { FiGithub, FiMail, FiChevronDown } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 import { SOCIALS } from '../data/socials'

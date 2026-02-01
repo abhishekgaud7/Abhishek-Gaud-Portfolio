@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiMail, FiGithub, FiLinkedin, FiPhone, FiSend } from 'react-icons/fi';
+import { FiMail, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
 import { SOCIALS } from '../data/socials';
 
 const Contact: React.FC = () => {
