@@ -1,19 +1,24 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useCallback } from 'react'
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { FiGithub, FiArrowLeft, FiArrowRight, FiExternalLink } from 'react-icons/fi'
 import { projectsData } from '../data/projects'
 
 /**
  * Projects Component
  * Displays a 3D carousel of featured projects with glassmorphism design.
- * Uses framed-motion for animations.
+ * Optimized with useMotionValue for high performance animations.
  */
 const Projects: React.FC = () => {
-  const carouselRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
   const totalProjects = projectsData.length
+
+  // Motion values for the tilt effect - optimizing performance by avoiding re-renders
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+
+  // Smooth spring physics for the tilt
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [15, -15]), { stiffness: 150, damping: 20 })
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-15, 15]), { stiffness: 150, damping: 20 })
 
   const scrollToIndex = (index: number) => {
     setActiveIndex(index)
@@ -44,66 +49,68 @@ const Projects: React.FC = () => {
     // Default style for hidden cards
     let style = {
       scale: 0.65,
-      rotateY: normalizedOffset > 0 ? -45 : 45,
       translateX: normalizedOffset * 100,
-      translateY: 0,
       translateZ: -320,
       opacity: 0,
       zIndex: 1,
       filter: 'blur(5px)',
-      boxShadow: 'none',
+      pointerEvents: 'none', // Optimization: disable pointer events on inactive cards
     }
 
     if (normalizedOffset === 0) {
       style = {
         scale: 1,
-        rotateY: 0,
         translateX: 0,
-        translateY: 0,
         translateZ: 0,
         opacity: 1,
         zIndex: 10,
         filter: 'blur(0px)',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(99, 102, 241, 0.2)',
+        pointerEvents: 'auto',
       }
     } else if (Math.abs(normalizedOffset) === 1) {
       style = {
         scale: 0.85,
-        rotateY: normalizedOffset > 0 ? -25 : 25,
         translateX: normalizedOffset * 160,
-        translateY: 0,
         translateZ: -100,
         opacity: 0.7,
         zIndex: 5,
         filter: 'blur(2px)',
-        boxShadow: '0 10px 30px -10px rgba(0, 0, 0, 0.5)',
+        pointerEvents: 'none', // Optimization
       }
     } else if (Math.abs(normalizedOffset) === 2) {
       style = {
         scale: 0.75,
-        rotateY: normalizedOffset > 0 ? -35 : 35,
         translateX: normalizedOffset * 130,
-        translateY: 0,
         translateZ: -200,
         opacity: 0.4,
         zIndex: 3,
         filter: 'blur(4px)',
-        boxShadow: '0 5px 15px -5px rgba(0, 0, 0, 0.5)',
+        pointerEvents: 'none', // Optimization
       }
     }
 
-    return style
+    return { ...style, rotateY: 0 } // Base rotation is 0, tilt handled by motion values for active card
   }
 
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') scrollCarousel('prev')
-      else if (e.key === 'ArrowRight') scrollCarousel('next')
-    }
-    window.addEventListener('keydown', handleKeyPress)
-    return () => window.removeEventListener('keydown', handleKeyPress)
-  }, [scrollCarousel])
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const width = rect.width
+    const height = rect.height
+    const mouseX = event.clientX - rect.left
+    const mouseY = event.clientY - rect.top
+
+    // Calculate normalized position (-0.5 to 0.5)
+    const xPct = (mouseX / width) - 0.5
+    const yPct = (mouseY / height) - 0.5
+
+    x.set(xPct)
+    y.set(yPct)
+  }
+
+  const handleMouseLeave = () => {
+    x.set(0)
+    y.set(0)
+  }
 
   return (
     <section id="projects" className="py-32 relative overflow-hidden min-h-screen flex flex-col justify-center">
@@ -117,7 +124,7 @@ const Projects: React.FC = () => {
           <p className="text-gray-400 max-w-2xl mx-auto">Explore some of my recent work, blending creativity with technical excellence.</p>
         </div>
 
-        <div className="relative h-[500px] w-full perspective-1000 flex items-center justify-center" ref={carouselRef}>
+        <div className="relative h-[500px] w-full perspective-1000 flex items-center justify-center">
           {projectsData.map((project, index) => {
             const cardStyle = getCardStyle(index)
             const isActive = index === activeIndex
@@ -129,32 +136,23 @@ const Projects: React.FC = () => {
                 initial={false}
                 animate={{
                   scale: cardStyle.scale,
-                  rotateY: isActive ? cardStyle.rotateY + mousePosition.y : cardStyle.rotateY,
-                  rotateX: isActive ? mousePosition.x : 0,
                   x: `calc(-50% + ${cardStyle.translateX}px)`,
-                  y: `calc(-50% + ${cardStyle.translateY}px)`,
                   z: cardStyle.translateZ,
                   opacity: cardStyle.opacity,
                   filter: cardStyle.filter,
-                }}
-                transition={{ type: 'spring', stiffness: 200, damping: 25 }}
-                style={{
                   zIndex: cardStyle.zIndex,
+                }}
+                style={{
+                  rotateX: isActive ? rotateX : 0,
+                  rotateY: isActive ? rotateY : 0,
                   transformStyle: 'preserve-3d',
-                  boxShadow: cardStyle.boxShadow,
                   left: '50%',
                   top: '50%',
+                  y: '-50%', // Center vertically using translate instead of calc in animate (smoother)
                 }}
-                onMouseMove={(event) => {
-                  if (!isActive) return
-                  const rect = event.currentTarget.getBoundingClientRect()
-                  const x = event.clientX - rect.left
-                  const y = event.clientY - rect.top
-                  const centerX = rect.width / 2
-                  const centerY = rect.height / 2
-                  setMousePosition({ x: ((y - centerY) / centerY) * -5, y: ((x - centerX) / centerX) * 5 })
-                }}
-                onMouseLeave={() => isActive && setMousePosition({ x: 0, y: 0 })}
+                transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+                onMouseMove={isActive ? handleMouseMove : undefined}
+                onMouseLeave={isActive ? handleMouseLeave : undefined}
                 onClick={() => scrollToIndex(index)}
               >
                 {/* Image Section */}
@@ -164,6 +162,7 @@ const Projects: React.FC = () => {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute bottom-4 left-4 z-20">
                     <h3 className="text-2xl font-bold font-heading text-white mb-1">{project.title}</h3>
@@ -210,17 +209,17 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Controls */}
-        <div className="flex justify-center gap-6 mt-12">
+        <div className="flex justify-center gap-6 mt-12 pb-12">
           <button
             onClick={() => scrollCarousel('prev')}
-            className="p-4 rounded-full glass hover:bg-white/10 text-white transition-all transform hover:scale-110"
+            className="p-4 rounded-full glass hover:bg-white/10 text-white transition-all transform hover:scale-110 active:scale-95"
             aria-label="Previous Project"
           >
             <FiArrowLeft size={24} />
           </button>
           <button
             onClick={() => scrollCarousel('next')}
-            className="p-4 rounded-full glass hover:bg-white/10 text-white transition-all transform hover:scale-110"
+            className="p-4 rounded-full glass hover:bg-white/10 text-white transition-all transform hover:scale-110 active:scale-95"
             aria-label="Next Project"
           >
             <FiArrowRight size={24} />
