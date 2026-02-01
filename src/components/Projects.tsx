@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
-import { FiGithub, FiArrowLeft, FiArrowRight, FiExternalLink } from 'react-icons/fi'
+import { FiArrowLeft, FiArrowRight, FiExternalLink } from 'react-icons/fi'
 import { projectsData } from '../data/projects'
 
 /**
@@ -186,15 +186,7 @@ const Projects: React.FC = () => {
                   </p>
 
                   <div className="flex gap-4 mt-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-medium transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <FiGithub /> Source
-                    </a>
+
                     {project.link && (
                       <a
                         href={project.link}
