@@ -2,6 +2,14 @@ import { Project } from '../types';
 
 export const projectsData: Project[] = [
   {
+    title: 'Pathly – AI-Powered Life Path Simulator',
+    description: 'An AI-powered "Parallel Timeline Simulator" that helps users explore life decisions and potential outcomes. Features AI analysis to visualize how choices transform your life.',
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'AI SDK', 'OpenAI API'],
+    link: 'https://pathly-wine.vercel.app/',
+    github: 'https://github.com/abhishekgaud7',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80'
+  },
+  {
     title: 'Nexaweb',
     description: 'India\'s premium web agency delivering high-converting SaaS, AI, and e-commerce websites. Trusted by 50+ brands for 2x faster delivery.',
     tech: ['React', 'Next.js', 'AI/ML Integration', 'Web Design'],

@@ -53,8 +53,9 @@ const Projects: React.FC = () => {
       translateZ: -320,
       opacity: 0,
       zIndex: 1,
-      filter: 'blur(5px)',
-      pointerEvents: 'none', // Optimization: disable pointer events on inactive cards
+      filter: 'blur(2px)', // Reduced from 5px
+      pointerEvents: 'none',
+      visibility: 'hidden', // Hide completely if not visible
     }
 
     if (normalizedOffset === 0) {
@@ -66,6 +67,7 @@ const Projects: React.FC = () => {
         zIndex: 10,
         filter: 'blur(0px)',
         pointerEvents: 'auto',
+        visibility: 'visible',
       }
     } else if (Math.abs(normalizedOffset) === 1) {
       style = {
@@ -76,6 +78,7 @@ const Projects: React.FC = () => {
         zIndex: 5,
         filter: 'blur(2px)',
         pointerEvents: 'none', // Optimization
+        visibility: 'visible',
       }
     } else if (Math.abs(normalizedOffset) === 2) {
       style = {
@@ -86,6 +89,7 @@ const Projects: React.FC = () => {
         zIndex: 3,
         filter: 'blur(4px)',
         pointerEvents: 'none', // Optimization
+        visibility: 'visible',
       }
     }
 
@@ -132,7 +136,7 @@ const Projects: React.FC = () => {
             return (
               <motion.article
                 key={index}
-                className="absolute w-[350px] md:w-[450px] aspect-[4/5] bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden cursor-pointer"
+                className="absolute w-[350px] md:w-[450px] aspect-[4/5] bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden cursor-pointer"
                 initial={false}
                 animate={{
                   scale: cardStyle.scale,
@@ -149,6 +153,7 @@ const Projects: React.FC = () => {
                   left: '50%',
                   top: '50%',
                   y: '-50%', // Center vertically using translate instead of calc in animate (smoother)
+                  willChange: 'transform, opacity, filter', // Hardware acceleration hint
                 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 25 }}
                 onMouseMove={isActive ? handleMouseMove : undefined}
