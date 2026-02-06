@@ -30,7 +30,6 @@ function App(): JSX.Element {
         <Skills />
         <Projects />
         <Achievements />
-        <Achievements />
         <Contact />
       </Suspense>
       <Footer />
