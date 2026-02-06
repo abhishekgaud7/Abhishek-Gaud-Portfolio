@@ -8,7 +8,6 @@ import { Suspense, lazy } from 'react'
 // Lazy load non-critical sections
 const About = lazy(() => import('./components/About'))
 const Achievements = lazy(() => import('./components/Achievements'))
-const Certificate = lazy(() => import('./components/Certificate'))
 const Contact = lazy(() => import('./components/Contact'))
 const Education = lazy(() => import('./components/Education'))
 const Experience = lazy(() => import('./components/Experience'))
@@ -31,7 +30,7 @@ function App(): JSX.Element {
         <Skills />
         <Projects />
         <Achievements />
-        <Certificate />
+        <Achievements />
         <Contact />
       </Suspense>
       <Footer />

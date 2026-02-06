@@ -17,21 +17,7 @@ export interface Achievement {
     date?: string;
 }
 
-export interface CertificateItem {
-    school: string;
-    qualification: string;
-    location: string;
-    details: string[];
-    meta: string;
-}
 
-export interface CertificateImage {
-    id: string;
-    title: string;
-    image: string;
-    issuer?: string;
-    date?: string;
-}
 
 export interface EducationItem {
     period: string;
