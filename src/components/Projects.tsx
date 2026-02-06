@@ -53,9 +53,10 @@ const Projects: React.FC = () => {
       translateZ: -320,
       opacity: 0,
       zIndex: 1,
-      filter: 'blur(2px)', // Reduced from 5px
+      filter: 'none', // Optimization: remove blur on hidden items
       pointerEvents: 'none',
       visibility: 'hidden', // Hide completely if not visible
+      display: 'none', // Optimization: remove from layout
     }
 
     if (normalizedOffset === 0) {
@@ -65,9 +66,10 @@ const Projects: React.FC = () => {
         translateZ: 0,
         opacity: 1,
         zIndex: 10,
-        filter: 'blur(0px)',
+        filter: 'none',
         pointerEvents: 'auto',
         visibility: 'visible',
+        display: 'block',
       }
     } else if (Math.abs(normalizedOffset) === 1) {
       style = {
@@ -76,9 +78,10 @@ const Projects: React.FC = () => {
         translateZ: -100,
         opacity: 0.7,
         zIndex: 5,
-        filter: 'blur(2px)',
+        filter: 'none', // Optimization: remove blur
         pointerEvents: 'none', // Optimization
         visibility: 'visible',
+        display: 'block',
       }
     } else if (Math.abs(normalizedOffset) === 2) {
       style = {
@@ -87,9 +90,10 @@ const Projects: React.FC = () => {
         translateZ: -200,
         opacity: 0.4,
         zIndex: 3,
-        filter: 'blur(4px)',
+        filter: 'blur(2px)', // Reduced blur
         pointerEvents: 'none', // Optimization
         visibility: 'visible',
+        display: 'block',
       }
     }
 
@@ -119,8 +123,8 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-32 relative overflow-hidden min-h-screen flex flex-col justify-center">
       {/* Background Elements - Deep Space Nebula */}
-      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen animate-pulse" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[80px] pointer-events-none mix-blend-screen" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[60px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 w-full h-full flex flex-col">
         <div className="text-center mb-16">
@@ -136,7 +140,7 @@ const Projects: React.FC = () => {
             return (
               <motion.article
                 key={index}
-                className="absolute w-[350px] md:w-[450px] aspect-[4/5] bg-glass backdrop-blur-md border border-white/40 rounded-3xl overflow-hidden cursor-pointer shadow-glass group"
+                className="absolute w-[350px] md:w-[450px] aspect-[4/5] bg-glass border border-white/40 rounded-3xl overflow-hidden cursor-pointer shadow-glass group"
                 initial={false}
                 animate={{
                   scale: cardStyle.scale,
